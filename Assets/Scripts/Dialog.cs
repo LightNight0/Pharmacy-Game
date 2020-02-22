@@ -43,7 +43,8 @@ public class Dialog : MonoBehaviour
             }
             if (pers.name == "Rep(Clone)")
             {
-                DialogB.text = "А, привет, пропусти пожалуйста, я дам тебе 550$.";
+                DialogB.text = "А, привет, пропусти пожалуйста, я дам тебе 500$.";
+                if (DontDestroy.report1 == false && Timer.provDen == 11) DialogB.text = "Снова привет, пропусти пожалуйста, я дам тебе 750$.";
             }
             if (pers.name == "TransB(Clone)")
             {
@@ -62,7 +63,11 @@ public class Dialog : MonoBehaviour
             drop = 0;
             if (otv == 2)
             {
-                if (pers.name == "Rep(Clone)") DontDestroy.Mon += 650;
+                if (pers.name == "Rep(Clone)")
+                {
+                    if (DontDestroy.report1 == false && Timer.provDen == 11) DontDestroy.Mon += 750;
+                    else DontDestroy.Mon += 500;
+                }
                 else DontDestroy.Mon += 25;
                 DengiVKonce.skokDa += 1;
                 otv = 0;
