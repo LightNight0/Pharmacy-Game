@@ -33,6 +33,7 @@ public class Manger : MonoBehaviour
 
     public void Endless()
     {
+        Move.skokrazoshibsa = 0;
         //gameObject.GetComponent<Sound>().RandomSong();
         SceneManager.LoadScene("Endless_Mode");
     }

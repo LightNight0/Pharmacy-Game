@@ -3724,7 +3724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogPanel: {fileID: 479941559}
-  TimePanel1: {fileID: 0}
+  TimePanel1: {fileID: 345778749}
   PanelPlay1: {fileID: 1662159454}
   Oshibka: {fileID: 386528797}
   OshibkaText: {fileID: 1048995740}
@@ -4029,10 +4029,10 @@ RectTransform:
   m_Father: {fileID: 1986659698}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 980, y: 0}
-  m_SizeDelta: {x: -80, y: 544}
+  m_SizeDelta: {x: -80, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &826100078
 MonoBehaviour:
@@ -9526,7 +9526,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 779799704}
-        m_MethodName: VklW
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
