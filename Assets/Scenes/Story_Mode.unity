@@ -4482,7 +4482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogPanel: {fileID: 479941559}
-  TimePanel1: {fileID: 1709086383}
+  TimePanel1: {fileID: 671800991}
   PanelPlay1: {fileID: 1662159454}
   Oshibka: {fileID: 386528797}
   OshibkaText: {fileID: 1048995740}

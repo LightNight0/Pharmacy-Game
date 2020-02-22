@@ -69,6 +69,7 @@ public class Manger : MonoBehaviour
 
     public void ViborAkta()
     {
+        Move.skokrazoshibsa = 0;
         SceneManager.LoadScene("Vibor");
     }
 
