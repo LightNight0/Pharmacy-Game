@@ -126,7 +126,7 @@ public class Move : MonoBehaviour
                 Deb.enabled = true;
                 bool ijHidden = Deb.GetBool("isHidden");
                 Deb.SetBool("isHidden", !ijHidden);
-                gameObject.GetComponent<Timer>().YHD.text = "Перекаченный транс убил всю группу, вам теперь не куда спрятаться.";
+                gameObject.GetComponent<Timer>().YHD.text = "Из-за вашего неверного выбора бся группа была убита.";
 
                 DontDestroy.trans = true;
             }
@@ -321,8 +321,8 @@ public class Move : MonoBehaviour
             {
                 skokrazoshibsa += 1;
                 skokrazoshibsa2 += 1;
-                if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у нее, бля, у него подвох!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у нее, бля, у него подвох!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
+                if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у нее, ***, у него подвох!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
+                if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у нее, ***, у него подвох!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
                 if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
                 DontDestroy.Mon -= skokrazoshibsa * 5;
                 Oshibsa();
