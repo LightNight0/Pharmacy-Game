@@ -157,7 +157,7 @@ public class Story : MonoBehaviour
                 break;
             case 11:
                 Spawner.ocheredforsujet = 0;
-                if (DontDestroy.report1 == true) PersForSujet = 8;
+                if (DontDestroy.report1 == false) PersForSujet = 8;
                 Move.skokrazoshibsa = 0;
                 Timer.Den = 1;
                 KakoiTyr.text = "Тур Третий";
