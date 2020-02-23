@@ -344,14 +344,18 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 804870203}
   m_Father: {fileID: 1212714928}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -509.09003}
-  m_SizeDelta: {x: 296, y: 1025.62}
+
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000011444, y: -5226.3}
+  m_SizeDelta: {x: 832.9, y: 9414.6}
+
+
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429313534
 MonoBehaviour:
@@ -372,19 +376,42 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_Font: {fileID: 12800000, guid: 9ea97ce2d7d1b534494c0ecb98982ce9, type: 3}
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 64
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 2
-  m_Text: "\u0418\u0433\u0440\u0443 \u043F\u0438\u043B\u0438\u043B\u0438:\n\u0412\u043B\u0430\u0434"
+    m_LineSpacing: 1
+  m_Text: "\n\nGAME DESIGN\n\u0412\u041B \u0410\u0414\n\u0410\u0420\u0422 \u0401\u041C\n\nEXECUTIVE
+    PRODUCER\n\u0412\u041B \u0410\u0414\n\nPROJECT  LEAD\n\u0412\u041B \u0410\u0414\n\nDEVELOPMENT
+    \ DIRECTOR\n\u0412\u041B \u0410\u0414\n\nTECHNICAL  DIRECTOR\n\u0412\u041B \u0410\u0414\n\nLEAD
+    \ PROGRAMMER\n\u0412\u041B \u0410\u0414\n\nART  DIRECTOR\n\u041A \u0410\u0422
+    \u042F\n\nLEAD ARTIST\n\u0412\u041B \u0410\u0414\n\nDESIGN DIRECTOR\n\u041A \u0410
+    \u0422 \u042F\n\nLEAD DESIGNER\n\u041A \u0410 \u0422 \u042F\n\nAUDIO DIRECTOR\n\u0412\u041B
+    \u0410\u0414\n\nPRODUCER\n\u0410\u0420\u0422 \u0401\u041C\n\nLEAD   GAMEPLAY   PROGRAMMER\n\u0412\u041B
+    \u0410\u0414\n\nGAMEPLAY   PROGRAMMING\n\u0412\u041B \u0410\u0414\n\nADDITIONAL
+    GAMEPLAY   PROGRAMMING\n\u0412\u041B \u0410\u0414\n\u0410\u0420\u0422 \u0401\u041C\n\nSYSTEMS
+    \  PROGRAMMING\n\u0412\u041B \u0410\u0414\n\nGRAPHICK PROGRAMMING\n\u0412\u041B
+    \u0410\u0414\n\nADDITIONAL GRAPHICK  PROGRAMMING\n\u0410\u0420\u0422 \u0401\u041C\n\u0412\u041B
+    \u0410\u0414\n\nUSER INTERFACE PROGRAMMING\n\u0412\u041B \u0410\u0414\n\nADDITIONAL
+    PROGRAMMING\n\u0412\u041B \u0410\u0414\n\u0410\u0420\u0422 \u0401\u041C\n\nSUPPORTING
+    \ ART  LEAD\n\u0410\u0420\u0422 \u0401\u041C\n\u0412\u041B \u0410\u0414\n\nWORLD
+    ART\n\u041A \u0410 \u0422 \u042F\n\nCHARACTER ART\n\u041A \u0410 \u0422 \u042F\n\nLEAD
+    \ UX  DESIGNER\n\u041A \u0410 \u0422 \u042F\n\nUSER INTERFACE\n\u041A \u0410 \u0422
+    \u042F\n\nTECHNICAL ART \n\u0410\u0420\u0422 \u0401\u041C\n\u0412\u041B \u0410\u0414\n\nLIGHTING\n\u0412\u041B
+    \u0410\u0414\n\nART   OUTSOURCING\n\u041A \u0410 \u0422 \u042F\n\nCONCEPT   ART\n\u0412\u041B
+    \u0410\u0414\n\nADDITIONAL CONCEPT   ART\n\u0410\u0420\u0422  \u0401\u041C\n\u0412\u041B
+    \u0410\u0414\n\nLEAD QUEST  DESIGNER\n\u0412\u041B \u0410\u0414\n\nQUEST  DESIGN\n\u0410\u0420\u0422
+    \u0401\u041C\n\u0412\u041B \u0410\u0414\n\nWRITING\n\u0410\u0420\u0422 \u0401\u041C\n\nSOUND
+    DESIGN\n\u0412\u041B \u0410\u0414\n\nQA ENGINEERS\n\u041A \u0410 \u0422 \u042F\n\u0410\u0420\u0422
+    \u0401\u041C\n\u0412\u041B \u0410\u0414\n\nBUSINESS DIRECTOR\n\u0410\u0420\u0422
+    \u0401\u041C\n\nHUMAN RESOURCES\n\u041A \u0410 \u0422 \u042F\n"
 --- !u!222 &429313535
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -476,6 +503,83 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 12d35c3236d0e934f927ef53f9d76e69, type: 3}
   volume: 0
   audiomixer: {fileID: 0}
+--- !u!1 &804870202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 804870203}
+  - component: {fileID: 804870205}
+  - component: {fileID: 804870204}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &804870203
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804870202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 429313533}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000000041444, y: 4548.8}
+  m_SizeDelta: {x: 864.5, y: 158.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &804870204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804870202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 9ea97ce2d7d1b534494c0ecb98982ce9, type: 3}
+    m_FontSize: 130
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 144
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Rock N Roll Party
+--- !u!222 &804870205
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804870202}
+  m_CullTransparentMesh: 0
 --- !u!1 &997860739
 GameObject:
   m_ObjectHideFlags: 0
