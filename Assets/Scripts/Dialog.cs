@@ -40,6 +40,7 @@ public class Dialog : MonoBehaviour
             if (pers.name == "Nark(Clone)")
             {
                 DialogB.text = "Привет, слышь, можешь занять мне 250$?\n Я потом вернуть как-нибудь";
+                if (DontDestroy.nark == true) DialogB.text = "Привет, ты меня сильно выручил вот и я в долгу не остнусь.\nВижу тебе не очень хорошо, держи, это поможет.";
             }
             if (pers.name == "Rep(Clone)")
             {
@@ -61,28 +62,37 @@ public class Dialog : MonoBehaviour
         {
             DialogB.text = "Спасибо";
             drop = 0;
-            if (otv == 2)
+            if (otv == 2 && pers.name != "Nark(Clone)")
             {
                 if (pers.name == "Rep(Clone)")
                 {
                     if (DontDestroy.report1 == false && Timer.provDen == 11) DontDestroy.Mon += 750;
                     else DontDestroy.Mon += 500;
+                    DengiVKonce.skokDa -= 1;
                 }
                 else DontDestroy.Mon += 25;
+                //if (pers.name == "Nark(Clone)")
+                //{
+                //    DontDestroy.Mon -= 250;
+                //    if (DontDestroy.Mon < 0) DontDestroy.Mon = 0;
+                //    DialogB.text = "Спасибо";
+                //    DengiVKonce.skokDa -= 1;
+                //}
                 DengiVKonce.skokDa += 1;
                 otv = 0;
             }
         }
         if (Move.aga == 3)
         {
-            if (pers.name == "Nark(Clone)")
-            {
-                DontDestroy.Mon -= 250;
-                if (DontDestroy.Mon < 0) DontDestroy.Mon = 0;
-                DialogB.text = "Спасибо";
-            }
-            else DialogB.text = "Да пошел ты..";
+            
+            DialogB.text = "Да пошел ты..";
             drop = 0;
+        }
+        if (Move.aga == 104)
+        {
+
+            DialogB.text = "Привет, ты меня сильно выручил вот и я в долгу не остнусь.\nВижу тебе не очень хорошо, держи, это поможет.";
+            //drop = 0;
         }
     }
 

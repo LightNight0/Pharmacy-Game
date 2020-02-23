@@ -37,6 +37,12 @@ public class Spawner : MonoBehaviour
 
             ocheredforsujet += 1;
 
+            //if (ocheredforsujet != Story.PersForSujet && Timer.provDen >= 11 && DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30 && lname == "Story_Mode")  
+            //{
+            //    modwho = 10;
+            //    //DontDestroy.nark = false;
+            //}
+
             switch (modwho)
             {
                 case 0:

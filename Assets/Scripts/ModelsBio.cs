@@ -202,7 +202,7 @@ public class ModelsBio : MonoBehaviour
                 charectirtO2 = 5;
 
                 charectirt3 = 0;
-                charectirtO3 = 19;
+                charectirtO3 = 17;
                 break;
         }
         stat = 0;

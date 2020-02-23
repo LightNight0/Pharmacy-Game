@@ -27,7 +27,7 @@ public class Manger : MonoBehaviour
     public void Akt3()
     {
         //gameObject.GetComponent<Sound>().RandomSong();
-        Timer.provDen = 11;
+        Timer.provDen = 11;//11
         SceneManager.LoadScene("Story_Mode");
     }
 
