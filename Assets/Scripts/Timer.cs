@@ -117,7 +117,7 @@ public class Timer : MonoBehaviour
             gameObject.GetComponent<Story>().DayS();
         }
         ////////////////////////////////////////////////
-        Quest();
+        if (lname == "Endless_Mode")  Quest();
     }
 
     private void FixedUpdate()
