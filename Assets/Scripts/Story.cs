@@ -413,8 +413,9 @@ public class Story : MonoBehaviour
                 }
                 else
                 {
-                    Yslovie = 0;
-                    DayS();
+                    Yslovie = 1;
+                    gameObject.GetComponent<Timer>().PanelSt();
+                    gameObject.GetComponent<Timer>().Podschet();
                 }
                 break;
             case 131:

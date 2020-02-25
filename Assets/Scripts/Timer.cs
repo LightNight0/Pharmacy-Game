@@ -197,6 +197,52 @@ public class Timer : MonoBehaviour
         }
     }
 
+    public void TransKill()//плохая концовка из-за пропуска транса
+    {
+        PanePlay();
+        Vikl();
+        YHD.text = "Из-за вашего неверного выбора бся группа была убита.";
+        Animator Deb = SmertPanel;
+        Deb.enabled = true;
+        bool ijHidden = Deb.GetBool("isHidden");
+        Deb.SetBool("isHidden", !ijHidden);
+        StartCoroutine(SOS());
+    }
+
+    IEnumerator SOS()
+    {
+        var color = _sprite.color;
+        color.a = 0.1f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.2f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.3f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.4f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.5f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.6f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.7f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.8f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.9f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 1;
+        _sprite.color = color;
+    }
+
     public void PanePlay()
     {
         contentPanel.enabled = true;

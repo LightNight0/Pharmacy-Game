@@ -132,13 +132,8 @@ public class Move : MonoBehaviour
             }
             if (pers.name == "TransB(Clone)")
             {
-                Animator Deb = gameObject.GetComponent<Timer>().SmertPanel;
-                Deb.enabled = true;
-                bool ijHidden = Deb.GetBool("isHidden");
-                Deb.SetBool("isHidden", !ijHidden);
-                gameObject.GetComponent<Timer>().YHD.text = "Из-за вашего неверного выбора бся группа была убита.";
-
                 DontDestroy.trans = true;
+                gameObject.GetComponent<Timer>().TransKill();
             }
             if (pers.name == "Ber(Clone)")
             {
