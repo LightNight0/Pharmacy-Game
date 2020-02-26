@@ -18,16 +18,16 @@ public class Manger : MonoBehaviour
         string lname = SceneManager.GetActiveScene().name;
         if (lname == "Vibor")
         {
-            ActTwo.gameObject.SetActive(DontDestroy.actII);
-            ActThree.gameObject.SetActive(DontDestroy.actIII);
-            Titrihi.gameObject.SetActive(DontDestroy.Titri);
+            if (DontDestroy.actII == true) ActTwo.active = true;
+            if (DontDestroy.actIII == true) ActThree.active = true;
+            if (DontDestroy.Titri == true) Titrihi.active = true;
         }
     }
 
     public void Story()
     {
         //gameObject.GetComponent<Sound>().RandomSong();
-        Timer.provDen = 1;
+        Timer.provDen = 1;//1
         Timer.Den = 1;
         SceneManager.LoadScene("Story_Mode");
     }

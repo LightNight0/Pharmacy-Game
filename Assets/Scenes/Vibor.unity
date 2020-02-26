@@ -551,6 +551,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a673d35aa4d6847a08c6f7179ffc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActTwo: {fileID: 1103724355}
+  ActThree: {fileID: 1103724355}
+  Titrihi: {fileID: 197938228}
 --- !u!4 &489743783
 Transform:
   m_ObjectHideFlags: 0
