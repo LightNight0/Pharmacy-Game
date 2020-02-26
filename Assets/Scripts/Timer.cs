@@ -265,7 +265,7 @@ public class Timer : MonoBehaviour
     {
         if (zv.value >= 85)
         {
-            YHD.text = "Вы умерли от передозировки";
+            YHD.text = "Вы умерли от сильной ломки";
             SmertPanel.enabled = true;
             bool izHidden = SmertPanel.GetBool("isHidden");
             SmertPanel.SetBool("isHidden", !izHidden);
@@ -280,7 +280,7 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                YHD.text = "Вы умерли от сильной ломки";
+                YHD.text = "Вы умерли от потери здоровья, такие дела(";
                 SmertPanel.enabled = true;
                 bool ihHidden = SmertPanel.GetBool("isHidden");
                 SmertPanel.SetBool("isHidden", !ihHidden);
@@ -290,7 +290,8 @@ public class Timer : MonoBehaviour
 
     public void PanelQu()
     {
-        if (DontDestroy.Lek + Lekabuff >= 1000)
+        string lname = SceneManager.GetActiveScene().name;
+        if (DontDestroy.Lek + Lekabuff >= 1500 && lname == "Endless_Mode")
         {
             YHD.text = "Вы излечились от зависимости, поздравляю!";
             SmertPanel.enabled = true;

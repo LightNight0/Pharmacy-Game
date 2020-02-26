@@ -55,6 +55,9 @@ public class Story : MonoBehaviour
         switch (Timer.provDen)
         {
             case 1:
+                DontDestroy.actII = false;
+                DontDestroy.actIII = false;
+                DontDestroy.Titri = false;
                 Move.zadanie1 = 4;
                 Move.zadanie2 = 0;
                 Move.zadanie3 = 0;
@@ -104,6 +107,7 @@ public class Story : MonoBehaviour
                 KakaiaCel.text = "Моя цель на сегодня: наслаждаться жизнью и найти себе что-нибудь для \"веселья\".";
                 break;
             case 4:
+                DontDestroy.actII = true;
                 Move.zadanie1 = 1;
                 Move.zadanie2 = 23;
                 Move.zadanie3 = 0;
@@ -206,6 +210,7 @@ public class Story : MonoBehaviour
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
                 break;
             case 11:
+                DontDestroy.actIII = true;
                 if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
                 gameObject.GetComponent<Timer>().Quest();
                 if (DontDestroy.report1 == false) Spawner.ocheredforsujet = 0;
@@ -265,12 +270,15 @@ public class Story : MonoBehaviour
                 KakoiText.text = "Прошедший день был вполне обычным.";
                 if (DontDestroy.uberfan == true) KakoiText.text += "Пропустив пришедшего менеджера я принес огромную пользу группе, за что был премирован. Все были мной довольны.";
                 else KakoiText.text += "Разве что пришел менеджер, которого я, на всякий случай, не пропустил. Больше ничего необычного.";
+                if (DontDestroy.pregant == true) KakoiText.text = "Прошлый день я польностью пропустил из-за произошедшей ситуации...";
                 KakoiText.text += "\nСегодня группа отыгрывает последний день тура, концерт самый крупный из всех, это будет ой как непросто.";
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
                 break;
             case 16:
                 //конец игры
-                SceneManager.LoadScene("Titri");
+                DontDestroy.Titri = true;
+                gameObject.GetComponent<Sound>().KonecSong();
+                SceneManager.LoadScene("Koncovki");
                 break;
         }
     }

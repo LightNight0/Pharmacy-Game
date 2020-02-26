@@ -9,6 +9,21 @@ public class Manger : MonoBehaviour
     GameObject ToChtoIgraet;
     GameObject Blya;
 
+    public GameObject ActTwo;
+    public GameObject ActThree;
+    public GameObject Titrihi;
+
+    void Start()
+    {
+        string lname = SceneManager.GetActiveScene().name;
+        if (lname == "Vibor")
+        {
+            ActTwo.gameObject.SetActive(DontDestroy.actII);
+            ActThree.gameObject.SetActive(DontDestroy.actIII);
+            Titrihi.gameObject.SetActive(DontDestroy.Titri);
+        }
+    }
+
     public void Story()
     {
         //gameObject.GetComponent<Sound>().RandomSong();
@@ -78,6 +93,13 @@ public class Manger : MonoBehaviour
         DontDestroy.zapaud1 = 4;
         gameObject.GetComponent<Sound>().TitriSong();
         SceneManager.LoadScene("Titri");
+    }
+
+    public void KonecScene()
+    {
+        DontDestroy.zapaud1 = 5;
+        gameObject.GetComponent<Sound>().KonecSong();
+        SceneManager.LoadScene("Koncovki");
     }
 
     public void QuitGame()

@@ -24,6 +24,10 @@ public class DontDestroy : MonoBehaviour
     public static bool pregant = false;
     public static bool busw = false;
 
+    public static bool actII = false;
+    public static bool actIII = false;
+    public static bool Titri = false;
+
     // Start is called before the first frame update
     void Start()
     {
