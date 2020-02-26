@@ -89,6 +89,9 @@ public class Spawner : MonoBehaviour
                 case 13:
                     spawnSuj6(); // Бизнес телка
                     break;
+                case 22:
+                    spawnSuj7(); // Наркоша 2
+                    break;
             }
         }
         else Clons();
@@ -169,6 +172,11 @@ public class Spawner : MonoBehaviour
     public void spawnSuj6() // Бизнес телка
     {
         whatToSpawnClone[13] = Instantiate(whatToSpawnPrefab[13], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+    }
+
+    public void spawnSuj7() // Наркоша 2
+    {
+        whatToSpawnClone[14] = Instantiate(whatToSpawnPrefab[14], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
     }
 
     //void spawnSAP4()

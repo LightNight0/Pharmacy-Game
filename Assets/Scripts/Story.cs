@@ -91,6 +91,9 @@ public class Story : MonoBehaviour
                 KakaiaCel.text = "Моя цель на сегодня: продолжать получать удовольствие и зарабатывать.";
                 break;
             case 3:
+                PersForSujet = 22;
+                Spawner.ocheredforsujet = 0;
+
                 Move.zadanie1 = 4;
                 Move.zadanie2 = 1;//23
                 Move.zadanie3 = 0;

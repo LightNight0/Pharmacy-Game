@@ -111,6 +111,13 @@ public class ModelsBio : MonoBehaviour
             stat = 10;
             Hz();
         }
+        if (Who.name == "Nark2(Clone)")
+        {
+            TypeM = "BlondHair";
+            Move.podhodit1 = 2; // 
+            stat = 11;
+            Hz();
+        }
     }
 
     void Hz()
@@ -203,6 +210,16 @@ public class ModelsBio : MonoBehaviour
 
                 charectirt3 = 0;
                 charectirtO3 = 17;
+                break;
+            case 11: // Нарко 2
+                charectirt1 = 1;
+                charectirtO1 = 2;
+
+                charectirt2 = 0;
+                charectirtO2 = 1;
+
+                charectirt3 = 2;
+                charectirtO3 = 22;
                 break;
         }
         stat = 0;
