@@ -217,12 +217,6 @@ public class Story : MonoBehaviour
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
                 break;
             case 11:
-                DontDestroy.actIII = true;
-                DontDestroy.MonAct[1] = DontDestroy.Mon;
-                DontDestroy.LekAct[1] = DontDestroy.Lek;
-                DontDestroy.ZavAct[1] = DontDestroy.Zav;
-                DontDestroy.HpAct[1].value = gameObject.GetComponent<Timer>().hp.value;
-                DontDestroy.ZvAct[1].value = gameObject.GetComponent<Timer>().zv.value;
                 if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
                 gameObject.GetComponent<Timer>().Quest();
                 if (DontDestroy.report1 == false) Spawner.ocheredforsujet = 0;
@@ -235,6 +229,12 @@ public class Story : MonoBehaviour
                 if (DontDestroy.nark == true) KakoiText.text += "Я дал в долг странной девушке, даже не знаю зачем. Может я ошибся, вернется ли эта девушка снова?";
                 else KakoiText.text += "Я прогнал странную девушку, просящую денег в долг. Я нахожусь в такой же ситуации, и собственная жизнь мне дороже. Надеюсь я поступил правильно.";
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
+                DontDestroy.actIII = true;
+                DontDestroy.MonAct[1] = DontDestroy.Mon;
+                DontDestroy.LekAct[1] = DontDestroy.Lek;
+                DontDestroy.ZavAct[1] = DontDestroy.Zav;
+                DontDestroy.HpAct = gameObject.GetComponent<Timer>().hp.value;
+                DontDestroy.ZvAct = gameObject.GetComponent<Timer>().zv.value;
                 break;
             case 12:
                 if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();

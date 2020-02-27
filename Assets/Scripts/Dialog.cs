@@ -66,24 +66,18 @@ public class Dialog : MonoBehaviour
         {
             DialogB.text = "Спасибо";
             drop = 0;
-            if (otv == 2 && pers.name != "Nark(Clone)")
+            if (otv == 2 && pers.name != "Nark(Clone)" && pers.name != "Rep(Clone)")
             {
-                if (pers.name == "Rep(Clone)")
-                {
-                    if (DontDestroy.report1 == false && Timer.provDen == 11) DontDestroy.Mon += 750;
-                    else DontDestroy.Mon += 500;
-                    DengiVKonce.skokDa -= 1;
-                }
-                else DontDestroy.Mon += 25;
-                //if (pers.name == "Nark(Clone)")
-                //{
-                //    DontDestroy.Mon -= 250;
-                //    if (DontDestroy.Mon < 0) DontDestroy.Mon = 0;
-                //    DialogB.text = "Спасибо";
-                //    DengiVKonce.skokDa -= 1;
-                //}
+                DontDestroy.Mon += 25;
                 DengiVKonce.skokDa += 1;
                 otv = 0;
+            }
+            if (pers.name == "Rep(Clone)")
+            {
+                if (DontDestroy.report1 == false && Timer.provDen == 11) DontDestroy.Mon += 750;
+                else DontDestroy.Mon += 500;
+                //DengiVKonce.skokDa -= 1;
+                pers.name = "Pshel";
             }
         }
         if (Move.aga == 3)

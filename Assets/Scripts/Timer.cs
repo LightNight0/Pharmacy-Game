@@ -123,8 +123,8 @@ public class Timer : MonoBehaviour
             gameObject.GetComponent<Story>().DayS();
             if (DontDestroy.actIII == true)
             {
-                hp.value = DontDestroy.HpAct[1].value;
-                zv.value = DontDestroy.ZvAct[1].value;
+                hp.value = DontDestroy.HpAct;
+                zv.value = DontDestroy.ZvAct;
             }
         }
         ////////////////////////////////////////////////

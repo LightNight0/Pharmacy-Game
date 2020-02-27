@@ -32,8 +32,8 @@ public class DontDestroy : MonoBehaviour
     public static double[] MonAct = { 0, 0 };
     public static float[] ZavAct = { 1, 1 };
     public static double[] LekAct = { 0, 0 };
-    public static Slider[] HpAct;
-    public static Slider[] ZvAct;
+    public static float HpAct = 55;
+    public static float ZvAct = 25;
 
     // Start is called before the first frame update
     void Start()
