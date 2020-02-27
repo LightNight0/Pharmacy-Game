@@ -113,7 +113,7 @@ public class Move : MonoBehaviour
             pers = GameObject.FindWithTag("Model");
             if (pers.name == "Rep(Clone)")
             {
-                DontDestroy.report1 = true;
+                if (Timer.provDen == 8) DontDestroy.report1 = true;
                 if (DontDestroy.report1 == true) DontDestroy.report2 = true;
                 if (DontDestroy.report1 == false && Timer.provDen == 11) DontDestroy.report2 = true;
             }

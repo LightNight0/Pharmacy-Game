@@ -243,7 +243,7 @@ public class Story : MonoBehaviour
                 PersForSujet = 11;
                 KakoiTyr.text = "Тур Третий";
                 KakoiDen.text = "День Тура: Второй";
-                if (DontDestroy.report2 == true) KakoiText.text = "Вчера снова приходила та журналистка, что предлагала взятку, в этот раз предложив мне еще больше денег. Выбор снова был тяжелым, учитывая мою цель и плохое самочувствие. Но я поступил так, как посчитал правильным.";
+                if (DontDestroy.report2 == true && DontDestroy.report1 == false) KakoiText.text = "Вчера снова приходила та журналистка, что предлагала взятку, в этот раз предложив мне еще больше денег. Выбор снова был тяжелым, учитывая мою цель и плохое самочувствие. Но я поступил так, как посчитал правильным.";
                 else KakoiText.text = "Прошлый день тура был был самым обычным, даже скучным, и не особо богатым на события. Нужно жить дальше.";
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
                 break;
@@ -273,13 +273,14 @@ public class Story : MonoBehaviour
                 KakoiDen.text = "День Тура: Четвертый";
                 KakoiText.text = "Вчера произошла очень странная ситуация. Пришедшая девушка убеждала меня, что она беременна от вокалиста группы.\nЯ не пропустил ее - с такими делами пускай она связывается с адвокатом, или обращается к менеджеру.";
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
+                Move.zadanie1 = 1;
                 break;
             case 15:
                 if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
                 gameObject.GetComponent<Timer>().Quest();
                 KakoiTyr.text = "Тур Третий";
                 KakoiDen.text = "День Тура: Пятый";
-                KakoiText.text = "Прошедший день был вполне обычным.";
+                KakoiText.text = "Прошедший день был вполне обычным. ";
                 if (DontDestroy.uberfan == true) KakoiText.text += "Пропустив пришедшего менеджера я принес огромную пользу группе, за что был премирован. Все были мной довольны.";
                 else KakoiText.text += "Разве что пришел менеджер, которого я, на всякий случай, не пропустил. Больше ничего необычного.";
                 if (DontDestroy.pregant == true) KakoiText.text = "Прошлый день я польностью пропустил из-за произошедшей ситуации...";
@@ -289,7 +290,6 @@ public class Story : MonoBehaviour
             case 16:
                 //конец игры
                 DontDestroy.Titri = true;
-                gameObject.GetComponent<Sound>().KonecSong();
                 SceneManager.LoadScene("Koncovki");
                 break;
         }

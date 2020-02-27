@@ -23,6 +23,8 @@ public class Koncovki : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.GetComponent<Sound>().SoundOn();
+        gameObject.GetComponent<Sound>().KonecSong();
         StartCoroutine(SvetWait());
         YourSelf();
     }
@@ -35,27 +37,27 @@ public class Koncovki : MonoBehaviour
 
     void YourSelf() //концовка ГГ завязанная на деньгах
     {
-        if (DontDestroy.Mon <= 0)
+        if ((DontDestroy.Mon + DontDestroy.Lek) <= 0)
         {
             YourText.text = "Вы не смогли накопить средтсв на лечение, вы даже умудрились войти в долги, с такой жизнью вы долго не протяненте...\nМесяц или два...";
         }
-        if (DontDestroy.Mon < 500 && DontDestroy.Mon > 0) 
+        if ((DontDestroy.Mon + DontDestroy.Lek) < 500 && (DontDestroy.Mon + DontDestroy.Lek) > 0) 
         {
             YourText.text = "Жаль что по итогу этого путешествия денег оказалось так мало.\nНа эти деньги вы сможете посетить, перед смертью, то место, о котором всегда мечтали.";
         }
-        if (DontDestroy.Mon < 750 && DontDestroy.Mon >= 500)
+        if ((DontDestroy.Mon + DontDestroy.Lek) < 750 && (DontDestroy.Mon + DontDestroy.Lek) >= 500)
         {
             YourText.text = "Увы, если бы вы были более осторожным или предприимчевым, вы бы смогли собрать нужную сумму.\nЭтих денег не хватит на лечение, но вы сможете хорошо повеселится до прихода вашего конца, тем более, до него еще пару лет.";
         }
-        if (DontDestroy.Mon < 1000 && DontDestroy.Mon >= 750)
+        if ((DontDestroy.Mon + DontDestroy.Lek) < 1000 && (DontDestroy.Mon + DontDestroy.Lek) >= 750)
         {
             YourText.text = "Вы были близко, но не смогли накопить на полную терапию, вы можете позволить себе лишь пару терапий, но не полный курс, впрочем, этого все равно хватит чтобы продлить жизнь на десятилетие.";
         }
-        if (DontDestroy.Mon < 1500 && DontDestroy.Mon >= 1000)
+        if ((DontDestroy.Mon + DontDestroy.Lek) < 1500 && (DontDestroy.Mon + DontDestroy.Lek) >= 1000)
         {
             YourText.text = "Сумму, которую вы собрали, хватит только на терапию, но без реабилитации.\nВам будет трудно справлятся первое время после терапии, но у вас все еще есть друзья, готовые вас поддержать и помочь вам.";
         }
-        if (DontDestroy.Mon >= 1500)
+        if ((DontDestroy.Mon + DontDestroy.Lek) >= 1500)
         {
             YourText.text = "Накопив нужную сумму, вы смогли полностью излечится от зависимости.\nТеперь вы снова можете беспокойно кататься по миру и веселится.";
         }

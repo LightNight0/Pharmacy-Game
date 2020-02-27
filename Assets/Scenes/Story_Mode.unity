@@ -4715,6 +4715,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eda7dadebe507a14791740dd755225bb, type: 3}
   - {fileID: 8300000, guid: 2ebad22095dc20d4fb7c5597a0db5857, type: 3}
   - {fileID: 8300000, guid: 12d35c3236d0e934f927ef53f9d76e69, type: 3}
+  - {fileID: 8300000, guid: ba73ad71319972549a5a808f734325ed, type: 3}
   volume: 0.25
   audiomixer: {fileID: 24100000, guid: 2fedf1c1165411542b128dffec0c7313, type: 2}
 --- !u!1 &789312298
@@ -8250,6 +8251,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eda7dadebe507a14791740dd755225bb, type: 3}
   - {fileID: 8300000, guid: 2ebad22095dc20d4fb7c5597a0db5857, type: 3}
   - {fileID: 8300000, guid: 12d35c3236d0e934f927ef53f9d76e69, type: 3}
+  - {fileID: 8300000, guid: ba73ad71319972549a5a808f734325ed, type: 3}
   volume: 0.25
   audiomixer: {fileID: 24100000, guid: 2fedf1c1165411542b128dffec0c7313, type: 2}
 --- !u!1 &1662020846
