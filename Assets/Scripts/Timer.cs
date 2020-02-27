@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 {
     public SpriteRenderer _sprite = null;
     public float Speed = 1f;
-    public static float timer = 60;
+    public static float timer = 6;
     public Animator contentPanel;
     public Animator TextPanel;
     public Animator ScorePanel;
@@ -90,16 +90,11 @@ public class Timer : MonoBehaviour
         //DontDestroy.Mon = 0;
         //DontDestroy.Lek = 0;
 
-        if (DontDestroy.actII == true)
-        {
-            hp.value = DontDestroy.HpAct[0].value;
-            zv.value = DontDestroy.ZvAct[0].value;
-        }
-        if (DontDestroy.actIII == true)
-        {
-            hp.value = DontDestroy.HpAct[1].value;
-            zv.value = DontDestroy.ZvAct[1].value;
-        }
+        //if (DontDestroy.actII == true)
+        //{
+        //    hp.value = DontDestroy.HpAct[0].value;
+        //    zv.value = DontDestroy.ZvAct[0].value;
+        //}
 
         timerEnd = DateTime.Now.AddSeconds(timer);
         TimeToLast = GetComponent<Text>();
@@ -126,6 +121,11 @@ public class Timer : MonoBehaviour
         if (lname == "Story_Mode")
         {
             gameObject.GetComponent<Story>().DayS();
+            if (DontDestroy.actIII == true)
+            {
+                hp.value = DontDestroy.HpAct[1].value;
+                zv.value = DontDestroy.ZvAct[1].value;
+            }
         }
         ////////////////////////////////////////////////
         if (lname == "Endless_Mode")  Quest();

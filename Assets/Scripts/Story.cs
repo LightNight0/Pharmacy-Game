@@ -110,12 +110,20 @@ public class Story : MonoBehaviour
                 KakaiaCel.text = "Моя цель на сегодня: наслаждаться жизнью и найти себе что-нибудь для \"веселья\".";
                 break;
             case 4:
+                togg1.gameObject.SetActive(false);
+                togg3.gameObject.SetActive(false);
+                Timer.Den = 1;
+                KakoiTyr.text = "Тур Второй";
+                KakoiDen.text = "День Тура: Первый";
+                KakoiText.text = "В прошлый раз девушка, в виде взятки, дала мне дозу. Я попробовал - все прошло круто, хочу повторить ещё раз.\nКевин - гитарист группы, сказал мне что дозу можно купить за 10$ у его приятеля.";
+                KakaiaCel.text = "Моя цель на сегодня: 10$ на развлечения и еще 15$ на ежедневные расходы.";
+
                 DontDestroy.actII = true;
                 DontDestroy.MonAct[0] = DontDestroy.Mon;
-                DontDestroy.LekAct[0] = DontDestroy.Lek;
-                DontDestroy.ZavAct[0] = DontDestroy.Zav;
-                DontDestroy.HpAct[0].value = gameObject.GetComponent<Timer>().hp.value;
-                DontDestroy.ZvAct[0].value = gameObject.GetComponent<Timer>().zv.value;
+                //DontDestroy.LekAct[0] = DontDestroy.Lek;
+                //DontDestroy.ZavAct[0] = DontDestroy.Zav;
+                //DontDestroy.HpAct[0].value = gameObject.GetComponent<Timer>().hp.value;
+                //DontDestroy.ZvAct[0].value = gameObject.GetComponent<Timer>().zv.value;
                 Move.zadanie1 = 1;
                 Move.zadanie2 = 23;
                 Move.zadanie3 = 0;
@@ -133,15 +141,6 @@ public class Story : MonoBehaviour
                 Timer.hpbiff = gameObject.GetComponent<Timer>().hp;
                 Timer.zvbiff = gameObject.GetComponent<Timer>().zv;
                 Yslovie = 4;
-
-                togg1.gameObject.SetActive(false);
-                togg3.gameObject.SetActive(false);
-
-                Timer.Den = 1;
-                KakoiTyr.text = "Тур Второй";
-                KakoiDen.text = "День Тура: Первый";
-                KakoiText.text = "В прошлый раз девушка, в виде взятки, дала мне дозу. Я попробовал - все прошло круто, хочу повторить ещё раз.\nКевин - гитарист группы, сказал мне что дозу можно купить за 10$ у его приятеля.";
-                KakaiaCel.text = "Моя цель на сегодня: 10$ на развлечения и еще 15$ на ежедневные расходы.";
                 break;
             case 5:
                 Move.zadanie1 = 4;

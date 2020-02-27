@@ -35,11 +35,11 @@ public class Manger : MonoBehaviour
     public void Akt2()
     {
 
-        DontDestroy.Mon = DontDestroy.MonAct[0];
-        DontDestroy.Lek = DontDestroy.LekAct[0];
-        DontDestroy.Zav = DontDestroy.ZavAct[0];
-
         Timer.provDen = 4;//4;
+        DontDestroy.Mon = DontDestroy.MonAct[0];
+        //DontDestroy.Lek = DontDestroy.LekAct[0];
+        //DontDestroy.Zav = DontDestroy.ZavAct[0];
+
         SceneManager.LoadScene("Story_Mode");
     }
 
