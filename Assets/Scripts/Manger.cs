@@ -34,14 +34,21 @@ public class Manger : MonoBehaviour
 
     public void Akt2()
     {
-        //gameObject.GetComponent<Sound>().RandomSong();
+
+        DontDestroy.Mon = DontDestroy.MonAct[0];
+        DontDestroy.Lek = DontDestroy.LekAct[0];
+        DontDestroy.Zav = DontDestroy.ZavAct[0];
+
         Timer.provDen = 4;//4;
         SceneManager.LoadScene("Story_Mode");
     }
 
     public void Akt3()
     {
-        //gameObject.GetComponent<Sound>().RandomSong();
+        DontDestroy.Mon = DontDestroy.MonAct[1];
+        DontDestroy.Lek = DontDestroy.LekAct[1];
+        DontDestroy.Zav = DontDestroy.ZavAct[1];
+
         Timer.provDen = 11;//11
         SceneManager.LoadScene("Story_Mode");
     }

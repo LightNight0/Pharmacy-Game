@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
     int ocher = 1;
     int zapomnil = 100;
     int zapomnil2 = 100;
+    int[] zapom = { 100, 100, 100, 100, 100, 100, 100, 100 };
 
     public static int ocheredforsujet = 0;
 
@@ -23,36 +24,55 @@ public class Spawner : MonoBehaviour
     public void Clons()
     {
         int modwho;
-        modwho = UnityEngine.Random.Range(0, 8);
+        modwho = UnityEngine.Random.Range(-6, 8);
         string lname = SceneManager.GetActiveScene().name;
         if (ocheredforsujet == 1 && lname == "Story_Mode")
         {
             modwho = Story.PersForSujet;
             ocheredforsujet = 10;
         }
-        if (modwho != zapomnil && modwho != zapomnil2)
+        //if (modwho != zapomnil && modwho != zapomnil2)
+        if (modwho != zapom[0] && modwho != zapom[1] && modwho != zapom[2] && modwho != zapom[3] && modwho != zapom[4] && modwho != zapom[5] && modwho != zapom[6])
         {
-            zapomnil2 = zapomnil;
-            zapomnil = modwho;
+            //zapomnil2 = zapomnil;
+            //zapomnil = modwho;
+
+            zapom[6] = zapom[5];
+            zapom[5] = zapom[4];
+            zapom[4] = zapom[3];
+            zapom[3] = zapom[2];
+            zapom[2] = zapom[1];
+            zapom[1] = zapom[0];
+            zapom[0] = modwho;
 
             ocheredforsujet += 1;
 
-            //if (ocheredforsujet != Story.PersForSujet && Timer.provDen >= 11 && DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30 && lname == "Story_Mode")  
-            //{
-            //    modwho = 10;
-            //    //DontDestroy.nark = false;
-            //}
-
             switch (modwho)
             {
+                case -6:
+                    spawnSAP14();
+                    break;
+                case -5:
+                    spawnSAP13();
+                    break;
+                case -4:
+                    spawnSAP12();
+                    break;
+                case -3:
+                    spawnSAP11();
+                    break;
+                case -2:
+                    spawnSAP10();
+                    break;
+                case -1:
+                    spawnSAP9();
+                    break;
                 case 0:
                     spawnSAP();
                     break;
-
                 case 1:
                     spawnSAP2();
                     break;
-
                 case 2:
                     spawnSAP3();
                     break;
@@ -142,6 +162,47 @@ public class Spawner : MonoBehaviour
         whatToSpawnClone[7] = Instantiate(whatToSpawnPrefab[7], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
     }
 
+    void spawnSAP9()
+    {
+        string lname = SceneManager.GetActiveScene().name;
+        if (lname == "Story_Mode") whatToSpawnClone[15] = Instantiate(whatToSpawnPrefab[15], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+        if (lname == "Endless_Mode") whatToSpawnClone[8] = Instantiate(whatToSpawnPrefab[8], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+    }
+
+    void spawnSAP10()
+    {
+        string lname = SceneManager.GetActiveScene().name;
+        if (lname == "Story_Mode") whatToSpawnClone[16] = Instantiate(whatToSpawnPrefab[16], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+        if (lname == "Endless_Mode") whatToSpawnClone[9] = Instantiate(whatToSpawnPrefab[9], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+    }
+
+    void spawnSAP11()
+    {
+        string lname = SceneManager.GetActiveScene().name;
+        if (lname == "Story_Mode") whatToSpawnClone[17] = Instantiate(whatToSpawnPrefab[17], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+        if (lname == "Endless_Mode") whatToSpawnClone[10] = Instantiate(whatToSpawnPrefab[10], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+    }
+
+    void spawnSAP12()
+    {
+        string lname = SceneManager.GetActiveScene().name;
+        if (lname == "Story_Mode") whatToSpawnClone[18] = Instantiate(whatToSpawnPrefab[18], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+        if (lname == "Endless_Mode") whatToSpawnClone[11] = Instantiate(whatToSpawnPrefab[11], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+    }
+
+    void spawnSAP13()
+    {
+        string lname = SceneManager.GetActiveScene().name;
+        if (lname == "Story_Mode") whatToSpawnClone[19] = Instantiate(whatToSpawnPrefab[19], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+        if (lname == "Endless_Mode") whatToSpawnClone[12] = Instantiate(whatToSpawnPrefab[12], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+    }
+
+    void spawnSAP14()
+    {
+        string lname = SceneManager.GetActiveScene().name;
+        if (lname == "Story_Mode") whatToSpawnClone[20] = Instantiate(whatToSpawnPrefab[20], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+        if (lname == "Endless_Mode") whatToSpawnClone[13] = Instantiate(whatToSpawnPrefab[13], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+    }
     // Для Сюжетки
 
     public void spawnSuj1() // Репортерша

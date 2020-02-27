@@ -87,8 +87,19 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        DontDestroy.Mon = 0;
-        DontDestroy.Lek = 0;
+        //DontDestroy.Mon = 0;
+        //DontDestroy.Lek = 0;
+
+        if (DontDestroy.actII == true)
+        {
+            hp.value = DontDestroy.HpAct[0].value;
+            zv.value = DontDestroy.ZvAct[0].value;
+        }
+        if (DontDestroy.actIII == true)
+        {
+            hp.value = DontDestroy.HpAct[1].value;
+            zv.value = DontDestroy.ZvAct[1].value;
+        }
 
         timerEnd = DateTime.Now.AddSeconds(timer);
         TimeToLast = GetComponent<Text>();

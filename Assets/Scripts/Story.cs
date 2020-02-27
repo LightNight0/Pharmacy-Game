@@ -111,6 +111,11 @@ public class Story : MonoBehaviour
                 break;
             case 4:
                 DontDestroy.actII = true;
+                DontDestroy.MonAct[0] = DontDestroy.Mon;
+                DontDestroy.LekAct[0] = DontDestroy.Lek;
+                DontDestroy.ZavAct[0] = DontDestroy.Zav;
+                DontDestroy.HpAct[0].value = gameObject.GetComponent<Timer>().hp.value;
+                DontDestroy.ZvAct[0].value = gameObject.GetComponent<Timer>().zv.value;
                 Move.zadanie1 = 1;
                 Move.zadanie2 = 23;
                 Move.zadanie3 = 0;
@@ -214,6 +219,11 @@ public class Story : MonoBehaviour
                 break;
             case 11:
                 DontDestroy.actIII = true;
+                DontDestroy.MonAct[1] = DontDestroy.Mon;
+                DontDestroy.LekAct[1] = DontDestroy.Lek;
+                DontDestroy.ZavAct[1] = DontDestroy.Zav;
+                DontDestroy.HpAct[1].value = gameObject.GetComponent<Timer>().hp.value;
+                DontDestroy.ZvAct[1].value = gameObject.GetComponent<Timer>().zv.value;
                 if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
                 gameObject.GetComponent<Timer>().Quest();
                 if (DontDestroy.report1 == false) Spawner.ocheredforsujet = 0;

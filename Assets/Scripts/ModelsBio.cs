@@ -40,21 +40,21 @@ public class ModelsBio : MonoBehaviour
     public void NewM()
     {
         Who = GameObject.FindWithTag("Model");
-        if (Who.name == "DarkHair1(Clone)" || Who.name == "DarkHair2(Clone)")
+        if (Who.name == "DarkHair1(Clone)" || Who.name == "DarkHair2(Clone)" || Who.name == "DarkHair3(Clone)" || Who.name == "DarkHair4(Clone)")
         {
             TypeM = "DarkHair";
             Move.podhodit1 = 2;
             stat = 1;
             Hz();
         }
-        if (Who.name == "RedHair1(Clone)" || Who.name == "RedHair2(Clone)")
+        if (Who.name == "RedHair1(Clone)" || Who.name == "RedHair2(Clone)" || Who.name == "RedHair3(Clone)" || Who.name == "RedHair4(Clone)")
         {
             TypeM = "RedHair";
             Move.podhodit1 = 3;
             stat = 2;
             Hz();
         }
-        if (Who.name == "BlondHair1(Clone)" || Who.name == "BlondHair2(Clone)")
+        if (Who.name == "BlondHair1(Clone)" || Who.name == "BlondHair2(Clone)" || Who.name == "BlondHair3(Clone)" || Who.name == "BlondHair4(Clone)")
         {
             TypeM = "BlondHair";
             Move.podhodit1 = 1;
