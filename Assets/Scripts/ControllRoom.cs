@@ -20,6 +20,25 @@ public class ControllRoom : MonoBehaviour
     {
         //TimeSpan delta = timerEnd - DateTime.Now;
         TimeSpan delta = Timer.delta;
-        if (delta.TotalSeconds >= 0) TimeToLast.text =/*"Времени Осталось: " + */delta.Minutes.ToString("00") + ":" + delta.Seconds.ToString("00");
+        if (delta.TotalSeconds >= 0)
+        {
+            TimeToLast.text =/*"Времени Осталось: " + */delta.Minutes.ToString("00") + ":" + delta.Seconds.ToString("00");
+            if (delta.TotalSeconds < 11)
+            {
+                var color = TimeToLast.color;
+                color.r = 1.0f;
+                color.b = 0.0f;
+                color.g = 0.0f;
+                TimeToLast.color = color;
+            }
+            else
+            {
+                var color = TimeToLast.color;
+                color.r = 1.0f;
+                color.b = 1.0f;
+                color.g = 1.0f;
+                TimeToLast.color = color;
+            }
+        }
     }
 }

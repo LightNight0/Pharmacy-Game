@@ -66,6 +66,14 @@ public class Sound : MonoBehaviour
         ToChtoIgraet.GetComponent<AudioSource>().enabled = true;
     }
 
+    public void KonecSong()
+    {
+        ToChtoIgraet = GameObject.Find("DontDestroy(Clone)");
+        ToChtoIgraet.GetComponent<AudioSource>().clip = treks[5];
+        ToChtoIgraet.GetComponent<AudioSource>().enabled = false;
+        ToChtoIgraet.GetComponent<AudioSource>().enabled = true;
+    }
+
     public void SoundOn()
     {
         StartCoroutine(SON());

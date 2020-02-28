@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DontDestroy : MonoBehaviour
 {
@@ -23,6 +24,16 @@ public class DontDestroy : MonoBehaviour
     public static bool uberfan = false;
     public static bool pregant = false;
     public static bool busw = false;
+
+    public static bool actII = false;
+    public static bool actIII = false;
+    public static bool Titri = false;
+
+    public static double[] MonAct = { 0, 0 };
+    public static float[] ZavAct = { 1, 1 };
+    public static double[] LekAct = { 0, 0 };
+    public static float HpAct = 55;
+    public static float ZvAct = 25;
 
     // Start is called before the first frame update
     void Start()

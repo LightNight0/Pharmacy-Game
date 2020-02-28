@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 {
     public SpriteRenderer _sprite = null;
     public float Speed = 1f;
-    public static float timer = 60;
+    public static float timer = 180;
     public Animator contentPanel;
     public Animator TextPanel;
     public Animator ScorePanel;
@@ -87,8 +87,14 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        DontDestroy.Mon = 0;
-        DontDestroy.Lek = 0;
+        //DontDestroy.Mon = 0;
+        //DontDestroy.Lek = 0;
+
+        //if (DontDestroy.actII == true)
+        //{
+        //    hp.value = DontDestroy.HpAct[0].value;
+        //    zv.value = DontDestroy.ZvAct[0].value;
+        //}
 
         timerEnd = DateTime.Now.AddSeconds(timer);
         TimeToLast = GetComponent<Text>();
@@ -115,9 +121,14 @@ public class Timer : MonoBehaviour
         if (lname == "Story_Mode")
         {
             gameObject.GetComponent<Story>().DayS();
+            if (DontDestroy.actIII == true)
+            {
+                hp.value = DontDestroy.HpAct;
+                zv.value = DontDestroy.ZvAct;
+            }
         }
         ////////////////////////////////////////////////
-        Quest();
+        if (lname == "Endless_Mode")  Quest();
     }
 
     private void FixedUpdate()
@@ -197,6 +208,52 @@ public class Timer : MonoBehaviour
         }
     }
 
+    public void TransKill()//плохая концовка из-за пропуска транса
+    {
+        PanePlay();
+        Vikl();
+        YHD.text = "Из-за вашего неверного выбора бся группа была убита.";
+        Animator Deb = SmertPanel;
+        Deb.enabled = true;
+        bool ijHidden = Deb.GetBool("isHidden");
+        Deb.SetBool("isHidden", !ijHidden);
+        StartCoroutine(SOS());
+    }
+
+    IEnumerator SOS()
+    {
+        var color = _sprite.color;
+        color.a = 0.1f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.2f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.3f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.4f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.5f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.6f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.7f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.8f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 0.9f;
+        _sprite.color = color;
+        yield return new WaitForSeconds(0.1f);
+        color.a = 1;
+        _sprite.color = color;
+    }
+
     public void PanePlay()
     {
         contentPanel.enabled = true;
@@ -219,7 +276,7 @@ public class Timer : MonoBehaviour
     {
         if (zv.value >= 85)
         {
-            YHD.text = "Вы умерли от передозировки";
+            YHD.text = "Вы умерли от сильной ломки";
             SmertPanel.enabled = true;
             bool izHidden = SmertPanel.GetBool("isHidden");
             SmertPanel.SetBool("isHidden", !izHidden);
@@ -234,7 +291,7 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                YHD.text = "Вы умерли от сильной ломки";
+                YHD.text = "Вы умерли от потери здоровья, такие дела(";
                 SmertPanel.enabled = true;
                 bool ihHidden = SmertPanel.GetBool("isHidden");
                 SmertPanel.SetBool("isHidden", !ihHidden);
@@ -244,7 +301,8 @@ public class Timer : MonoBehaviour
 
     public void PanelQu()
     {
-        if (DontDestroy.Lek + Lekabuff >= 1000)
+        string lname = SceneManager.GetActiveScene().name;
+        if (DontDestroy.Lek + Lekabuff >= 1500 && lname == "Endless_Mode")
         {
             YHD.text = "Вы излечились от зависимости, поздравляю!";
             SmertPanel.enabled = true;

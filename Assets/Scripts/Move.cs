@@ -46,6 +46,7 @@ public class Move : MonoBehaviour
 
     void Update()
     {
+        Move_Bitch();
         if (ag1 == 1)
         {
             model.transform.position = model.transform.position + new Vector3(0.15f, 0);
@@ -53,6 +54,9 @@ public class Move : MonoBehaviour
             {
                 ag1 = 0;
                 aga = 1;
+
+                pers = GameObject.FindWithTag("Model");
+                if (pers.name == "Nark(Clone)" && DontDestroy.nark == true) Nark_Help();
 
                 DialogPanel.enabled = true;
                 bool isHidden = DialogPanel.GetBool("isHidden");
@@ -110,25 +114,27 @@ public class Move : MonoBehaviour
             pers = GameObject.FindWithTag("Model");
             if (pers.name == "Rep(Clone)")
             {
-                DontDestroy.report1 = true;
+                if (Timer.provDen == 8) DontDestroy.report1 = true;
                 if (DontDestroy.report1 == true) DontDestroy.report2 = true;
                 if (DontDestroy.report1 == false && Timer.provDen == 11) DontDestroy.report2 = true;
             }
-            if (pers.name == "Nark(Clone)")
+            if (pers.name == "Nark(Clone)" && DontDestroy.nark == false)
             {
+                DialogPanel.enabled = true;
+                bool isHidden = DialogPanel.GetBool("isHidden");
+                DialogPanel.SetBool("isHidden", !isHidden);
+
                 DontDestroy.nark = true;
+                DontDestroy.Mon -= 250;
+                //if (DontDestroy.Mon < 0) DontDestroy.Mon = 0;
                 aga = 1;
                 No_Bitch();
+                return;
             }
             if (pers.name == "TransB(Clone)")
             {
-                Animator Deb = gameObject.GetComponent<Timer>().SmertPanel;
-                Deb.enabled = true;
-                bool ijHidden = Deb.GetBool("isHidden");
-                Deb.SetBool("isHidden", !ijHidden);
-                gameObject.GetComponent<Timer>().YHD.text = "Из-за вашего неверного выбора бся группа была убита.";
-
                 DontDestroy.trans = true;
+                gameObject.GetComponent<Timer>().TransKill();
             }
             if (pers.name == "Ber(Clone)")
             {
@@ -143,7 +149,8 @@ public class Move : MonoBehaviour
             {
                 DontDestroy.uberfan = true;
             }
-
+            if (pers.name == "Nark(Clone)") return;
+            else
             if (ModelsBio.charectirtO2 != 6)
             {
                 if (ModelsBio.charectirtO2 != 4)
@@ -350,6 +357,7 @@ public class Move : MonoBehaviour
             Vector2 pos = model.transform.position;
             ag1 = 3;
             aga = 3;
+            if (pers.name == "Nark(Clone)" && DontDestroy.nark == true) aga = 2;
             StartCoroutine(SIS());
         }
     }
@@ -365,10 +373,38 @@ public class Move : MonoBehaviour
     void D()
     {
         PanePlay1();
-        YDText.text = "Вас уволили и вы умерли от ломки!";
+        YDText.text = "Вас уволили!";
         YD.enabled = true;
         bool isHidden = YD.GetBool("isHidden");
         YD.SetBool("isHidden", !isHidden);
+    }
+
+    public void Nark_Help()
+    {
+        ag1 = 0;
+        aga = 104;
+
+        gameObject.GetComponent<Timer>().hp.value += 35;
+        DontDestroy.Mon += 175;
+        StartCoroutine(SAS());
+    }
+
+    IEnumerator SAS()
+    {
+        yield return new WaitForSeconds(3.0f);
+        DontDestroy.nark = false;
+        ag1 = 3;
+        DialogPanel.enabled = true;
+        bool isHidden = DialogPanel.GetBool("isHidden");
+        DialogPanel.SetBool("isHidden", !isHidden);
+        yield return new WaitForSeconds(1.5f);
+        Destroy(model.gameObject);
+        model = GameObject.FindWithTag("Model");
+        Destroy(model.gameObject);
+        aga = 0;
+        ag1 = 0;
+        Timer.last = 0;
+        Move_Bitch();
     }
 
     IEnumerator SIS()
@@ -384,6 +420,7 @@ public class Move : MonoBehaviour
         aga = 0;
         ag1 = 0;
         Timer.last = 0;
+        Move_Bitch();
     }
 
     IEnumerator Osh()

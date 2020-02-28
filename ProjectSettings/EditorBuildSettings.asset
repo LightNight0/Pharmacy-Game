@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Titri.unity
     guid: 417f4ac1b757cff48bb0004523d4cd67
+  - enabled: 1
+    path: Assets/Scenes/Koncovki.unity
+    guid: 66f327efd6cf5ae4b852f1a890022d59
   m_configObjects: {}

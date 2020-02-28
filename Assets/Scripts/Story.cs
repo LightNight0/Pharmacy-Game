@@ -22,6 +22,7 @@ public class Story : MonoBehaviour
     public Sprite[] sprites = new Sprite[4];
     public GameObject JurnalP;
     public GameObject StrokaSPodpisu;
+    public GameObject spawn;
 
     int zapomnil = 2;
     int zapomnil2 = 100;
@@ -49,9 +50,20 @@ public class Story : MonoBehaviour
     {
         PanJA();
         JIR();
+        string[] strArr = new string[4] { "Пускать только блондинок.", "Пускать только брюнеток.", "Пускать рыжих девушек.", "Пускать всех красивых девушек" };
+        string[] strArr2 = new string[4] { "Пускать только тру-фанаток.", "Пускать только девушек со стаффом: ", "Пускать девушек с возрастом меньше ", "Пускать девушек с возрастом больше " };
         switch (Timer.provDen)
         {
             case 1:
+                DontDestroy.actII = false;
+                DontDestroy.actIII = false;
+                DontDestroy.Titri = false;
+                Move.zadanie1 = 4;
+                Move.zadanie2 = 0;
+                Move.zadanie3 = 0;
+                gameObject.GetComponent<Timer>().DayQuest.text = strArr[Move.zadanie1 - 1];
+                gameObject.GetComponent<Timer>().DayQuest2.text = strArr[Move.zadanie1 - 1];
+
                 JurnalP.GetComponent<Image>().sprite = sprites[2];
                 zavbar.gameObject.SetActive(false);
                 togg1.gameObject.SetActive(false);
@@ -66,6 +78,12 @@ public class Story : MonoBehaviour
                 DontDestroy.Zav = 0;
                 break;
             case 2:
+                Move.zadanie1 = 2;
+                Move.zadanie2 = 0;
+                Move.zadanie3 = 0;
+                gameObject.GetComponent<Timer>().DayQuest.text = strArr[Move.zadanie1 - 1];
+                gameObject.GetComponent<Timer>().DayQuest2.text = strArr[Move.zadanie1 - 1];
+
                 StrokaSPodpisu.gameObject.SetActive(false);
                 KakoiTyr.text = "Тур Первый";
                 KakoiDen.text = "День Тура: Второй";
@@ -73,12 +91,49 @@ public class Story : MonoBehaviour
                 KakaiaCel.text = "Моя цель на сегодня: продолжать получать удовольствие и зарабатывать.";
                 break;
             case 3:
+                PersForSujet = 22;
+                Spawner.ocheredforsujet = 0;
+
+                Move.zadanie1 = 4;
+                Move.zadanie2 = 1;//23
+                Move.zadanie3 = 0;
+                gameObject.GetComponent<Timer>().DayQuest.text = strArr[Move.zadanie1 - 1];
+                gameObject.GetComponent<Timer>().DayQuest2.text = strArr[Move.zadanie1 - 1];
+                gameObject.GetComponent<Timer>().DayQuest.text += "                                        " + strArr2[0];
+                gameObject.GetComponent<Timer>().DayQuest2.text += "                                        " + strArr2[0];
+                //gameObject.GetComponent<Timer>().DayQuest.text += "любым";
+                //gameObject.GetComponent<Timer>().DayQuest2.text += "любым";
+
                 KakoiTyr.text = "Тур Первый";
                 KakoiDen.text = "День Тура: Третий";
                 KakoiText.text = "Сегодня будет последний день трехдневного концертного тура, думаю, сегодня и мне можно оторваться по полной.\nПосле работы планирую взять себе что-нибудь для \"веселья\".";
                 KakaiaCel.text = "Моя цель на сегодня: наслаждаться жизнью и найти себе что-нибудь для \"веселья\".";
                 break;
             case 4:
+                togg1.gameObject.SetActive(false);
+                togg3.gameObject.SetActive(false);
+                Timer.Den = 1;
+                KakoiTyr.text = "Тур Второй";
+                KakoiDen.text = "День Тура: Первый";
+                KakoiText.text = "В прошлый раз девушка, в виде взятки, дала мне дозу. Я попробовал - все прошло круто, хочу повторить ещё раз.\nКевин - гитарист группы, сказал мне что дозу можно купить за 10$ у его приятеля.";
+                KakaiaCel.text = "Моя цель на сегодня: 10$ на развлечения и еще 15$ на ежедневные расходы.";
+
+                DontDestroy.actII = true;
+                DontDestroy.MonAct[0] = DontDestroy.Mon;
+                //DontDestroy.LekAct[0] = DontDestroy.Lek;
+                //DontDestroy.ZavAct[0] = DontDestroy.Zav;
+                //DontDestroy.HpAct[0].value = gameObject.GetComponent<Timer>().hp.value;
+                //DontDestroy.ZvAct[0].value = gameObject.GetComponent<Timer>().zv.value;
+                Move.zadanie1 = 1;
+                Move.zadanie2 = 23;
+                Move.zadanie3 = 0;
+                gameObject.GetComponent<Timer>().DayQuest.text = strArr[Move.zadanie1 - 1];
+                gameObject.GetComponent<Timer>().DayQuest2.text = strArr[Move.zadanie1 - 1];
+                gameObject.GetComponent<Timer>().DayQuest.text += "                                        " + strArr2[1];
+                gameObject.GetComponent<Timer>().DayQuest2.text += "                                        " + strArr2[1];
+                gameObject.GetComponent<Timer>().DayQuest.text += "любым";
+                gameObject.GetComponent<Timer>().DayQuest2.text += "любым";
+
                 Move.skokrazoshibsa = 0;
                 Timer.LekBiff = DontDestroy.Lek;
                 Timer.MonBiff = DontDestroy.Mon;
@@ -86,17 +141,18 @@ public class Story : MonoBehaviour
                 Timer.hpbiff = gameObject.GetComponent<Timer>().hp;
                 Timer.zvbiff = gameObject.GetComponent<Timer>().zv;
                 Yslovie = 4;
-
-                togg1.gameObject.SetActive(false);
-                togg3.gameObject.SetActive(false);
-
-                Timer.Den = 1;
-                KakoiTyr.text = "Тур Второй";
-                KakoiDen.text = "День Тура: Первый";
-                KakoiText.text = "В прошлый раз девушка, в виде взятки, дала мне дозу. Я попробовал - все прошло круто, хочу повторить ещё раз.\nКевин - гитарист группы, сказал мне что дозу можно купить за 10$ у его приятеля.";
-                KakaiaCel.text = "Моя цель на сегодня: 10$ на развлечения и еще 15$ на ежедневные расходы.";
                 break;
             case 5:
+                Move.zadanie1 = 4;
+                Move.zadanie2 = 20;
+                Move.zadanie3 = 0;
+                gameObject.GetComponent<Timer>().DayQuest.text = strArr[Move.zadanie1 - 1];
+                gameObject.GetComponent<Timer>().DayQuest2.text = strArr[Move.zadanie1 - 1];
+                gameObject.GetComponent<Timer>().DayQuest.text += "                                        " + strArr2[1];
+                gameObject.GetComponent<Timer>().DayQuest2.text += "                                        " + strArr2[1];
+                gameObject.GetComponent<Timer>().DayQuest.text += ModelsBio.ves[0];
+                gameObject.GetComponent<Timer>().DayQuest2.text += ModelsBio.ves[0];
+
                 Timer.LekBiff = DontDestroy.Lek;
                 Timer.MonBiff = DontDestroy.Mon;
                 Timer.ZavBiff = DontDestroy.Zav;
@@ -110,6 +166,7 @@ public class Story : MonoBehaviour
                 KakaiaCel.text = "Моя цель на сегодня: заработать 10$ на препарат для интоксикации и еще 15$ на ежедневные расходы.";
                 break;
             case 6:
+                gameObject.GetComponent<Timer>().Quest();
                 Timer.LekBiff = DontDestroy.Lek;
                 Timer.MonBiff = DontDestroy.Mon;
                 Timer.ZavBiff = DontDestroy.Zav;
@@ -125,12 +182,14 @@ public class Story : MonoBehaviour
                 KakaiaCel.text = "Моя цель на сегодня: Получать удовольствие.";
                 break;
             case 7:
+                gameObject.GetComponent<Timer>().Quest();
                 KakoiTyr.text = "Тур Второй";
                 KakoiDen.text = "День Тура: Четвертый";
                 KakoiText.text = "Дело плохо - меня тянет на развлечения всё сильнее. Видимо это и называется зависимость. Я чувствую как она убивает меня изнутри. Надо что-то с этим делать!";
                 KakaiaCel.text = "Моя цель на сегодня: Попытаться что-то разузнать про способы побороть зависимость.";
                 break;
             case 8:
+                gameObject.GetComponent<Timer>().Quest();
                 Spawner.ocheredforsujet = 0;
                 PersForSujet = 8;
                 Move.skokrazoshibsa = 0;
@@ -140,6 +199,7 @@ public class Story : MonoBehaviour
                 KakaiaCel.text = "Начать копить деньги на лечение."; //"Моя цель на сегодня:";
                 break;
             case 9:
+                gameObject.GetComponent<Timer>().Quest();
                 Spawner.ocheredforsujet = 0;
                 PersForSujet = 9;
                 KakoiTyr.text = "Тур Второй";
@@ -148,6 +208,7 @@ public class Story : MonoBehaviour
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
                 break;
             case 10:
+                gameObject.GetComponent<Timer>().Quest();
                 Spawner.ocheredforsujet = 0;
                 PersForSujet = 10;
                 KakoiTyr.text = "Тур Второй";
@@ -156,7 +217,9 @@ public class Story : MonoBehaviour
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
                 break;
             case 11:
-                Spawner.ocheredforsujet = 0;
+                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
+                gameObject.GetComponent<Timer>().Quest();
+                if (DontDestroy.report1 == false) Spawner.ocheredforsujet = 0;
                 if (DontDestroy.report1 == false) PersForSujet = 8;
                 Move.skokrazoshibsa = 0;
                 Timer.Den = 1;
@@ -166,47 +229,68 @@ public class Story : MonoBehaviour
                 if (DontDestroy.nark == true) KakoiText.text += "Я дал в долг странной девушке, даже не знаю зачем. Может я ошибся, вернется ли эта девушка снова?";
                 else KakoiText.text += "Я прогнал странную девушку, просящую денег в долг. Я нахожусь в такой же ситуации, и собственная жизнь мне дороже. Надеюсь я поступил правильно.";
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
+                DontDestroy.actIII = true;
+                DontDestroy.MonAct[1] = DontDestroy.Mon;
+                DontDestroy.LekAct[1] = DontDestroy.Lek;
+                DontDestroy.ZavAct[1] = DontDestroy.Zav;
+                DontDestroy.HpAct = gameObject.GetComponent<Timer>().hp.value;
+                DontDestroy.ZvAct = gameObject.GetComponent<Timer>().zv.value;
                 break;
             case 12:
+                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
+                gameObject.GetComponent<Timer>().Quest();
                 Spawner.ocheredforsujet = 0;
                 PersForSujet = 11;
                 KakoiTyr.text = "Тур Третий";
                 KakoiDen.text = "День Тура: Второй";
-                if (DontDestroy.report2 == true) KakoiText.text = "Вчера снова приходила та журналистка, что предлагала взятку, в этот раз предложив мне еще больше денег. Выбор снова был тяжелым, учитывая мою цель и плохое самочувствие. Но я поступил так, как посчитал правильным.";
+                if (DontDestroy.report2 == true && DontDestroy.report1 == false) KakoiText.text = "Вчера снова приходила та журналистка, что предлагала взятку, в этот раз предложив мне еще больше денег. Выбор снова был тяжелым, учитывая мою цель и плохое самочувствие. Но я поступил так, как посчитал правильным.";
                 else KakoiText.text = "Прошлый день тура был был самым обычным, даже скучным, и не особо богатым на события. Нужно жить дальше.";
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
                 break;
             case 13:
+                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
+                gameObject.GetComponent<Timer>().Quest();
                 Yslovie = 13;
                 Spawner.ocheredforsujet = 0;
                 PersForSujet = 12;
                 KakoiTyr.text = "Тур Третий";
                 KakoiDen.text = "День Тура: Третий";
                 KakoiText.text = "Приходила девушка, назвавшая себя \"самая большая на свете фанатка\", и просила ее пропустить.";
-                if (DontDestroy.uberfan == true) KakoiText.text += "Пропустив ее, я получил штраф, но я не ошибся: она сильно понравилась нашим парням, за что мне вернули деньги и даже дали премию.";
+                if (DontDestroy.uberfan == true)
+                {
+                    KakoiText.text += "Пропустив ее, я получил штраф, но я не ошибся: она сильно понравилась нашим парням, за что мне вернули деньги и даже дали премию.";
+                    DontDestroy.Mon += 275;
+                }
                 else KakoiText.text += "Я не решился пропускать ее, так как она не подходила под требования. Может ей повезет в другой раз, надеюсь она не расстроилась.";
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
                 break;
             case 14:
+                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
+                gameObject.GetComponent<Timer>().Quest();
                 Spawner.ocheredforsujet = 0;
                 PersForSujet = 13;
                 KakoiTyr.text = "Тур Третий";
                 KakoiDen.text = "День Тура: Четвертый";
                 KakoiText.text = "Вчера произошла очень странная ситуация. Пришедшая девушка убеждала меня, что она беременна от вокалиста группы.\nЯ не пропустил ее - с такими делами пускай она связывается с адвокатом, или обращается к менеджеру.";
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
+                Move.zadanie1 = 1;
                 break;
             case 15:
+                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
+                gameObject.GetComponent<Timer>().Quest();
                 KakoiTyr.text = "Тур Третий";
                 KakoiDen.text = "День Тура: Пятый";
-                KakoiText.text = "Прошедший день был вполне обычным.";
+                KakoiText.text = "Прошедший день был вполне обычным. ";
                 if (DontDestroy.uberfan == true) KakoiText.text += "Пропустив пришедшего менеджера я принес огромную пользу группе, за что был премирован. Все были мной довольны.";
                 else KakoiText.text += "Разве что пришел менеджер, которого я, на всякий случай, не пропустил. Больше ничего необычного.";
+                if (DontDestroy.pregant == true) KakoiText.text = "Прошлый день я польностью пропустил из-за произошедшей ситуации...";
                 KakoiText.text += "\nСегодня группа отыгрывает последний день тура, концерт самый крупный из всех, это будет ой как непросто.";
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
                 break;
             case 16:
                 //конец игры
-                SceneManager.LoadScene("Titri");
+                DontDestroy.Titri = true;
+                SceneManager.LoadScene("Koncovki");
                 break;
         }
     }
@@ -349,13 +433,16 @@ public class Story : MonoBehaviour
                 }
                 else
                 {
-                    Yslovie = 0;
-                    DayS();
+                    Yslovie = 1;
+                    gameObject.GetComponent<Timer>().PanelSt();
+                    gameObject.GetComponent<Timer>().Podschet();
                 }
                 break;
             case 131:
                 Yslovie = 0;
-                gameObject.GetComponent<Timer>().PanelSt();
+                //gameObject.GetComponent<Timer>().PanelSt();
+                Timer.provDen += 1;
+                Timer.Den += 1;
                 PerehoDik();
                 break;
         }
