@@ -175,8 +175,8 @@ public class Move : MonoBehaviour
                                 {
                                     skokrazoshibsa += 1;
                                     skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, она не фанатка!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, она не фанатка!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
+                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, она не фанатка! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
+                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, она не фанатка! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
                                     if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
                                     DontDestroy.Mon -= skokrazoshibsa * 5;
                                     Oshibsa();
@@ -193,8 +193,8 @@ public class Move : MonoBehaviour
                                 {
                                     skokrazoshibsa += 1;
                                     skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у неё нет LCD-TV!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у неё нет LCD-TV!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
+                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у неё нет LCD-TV! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
+                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у неё нет LCD-TV! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
                                     if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
                                     DontDestroy.Mon -= skokrazoshibsa * 5;
                                     Oshibsa();
@@ -211,8 +211,8 @@ public class Move : MonoBehaviour
                                 {
                                     skokrazoshibsa += 1;
                                     skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у неё нет PlanB!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у неё нет PlanB!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
+                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у неё нет PlanB! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
+                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у неё нет PlanB! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
                                     if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
                                     DontDestroy.Mon -= skokrazoshibsa * 5;
                                     Oshibsa();
@@ -229,8 +229,8 @@ public class Move : MonoBehaviour
                                 {
                                     skokrazoshibsa += 1;
                                     skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у неё нет Kokos'a!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у неё нет Kokos'a!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
+                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у неё нет Kokos'a! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
+                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у неё нет Kokos'a! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
                                     if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
                                     DontDestroy.Mon -= skokrazoshibsa * 5;
                                     Oshibsa();
@@ -247,8 +247,8 @@ public class Move : MonoBehaviour
                                 {
                                     skokrazoshibsa += 1;
                                     skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у неё нет веществ!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у неё нет веществ!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
+                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у неё нет веществ! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
+                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у неё нет веществ! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
                                     if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
                                     DontDestroy.Mon -= skokrazoshibsa * 5;
                                     Oshibsa();
@@ -265,8 +265,8 @@ public class Move : MonoBehaviour
                                 {
                                     skokrazoshibsa += 1;
                                     skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, она старше " + zadanie3 + "!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, она старше " + zadanie3 + "!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
+                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, она старше " + zadanie3 + "! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
+                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, она старше " + zadanie3 + "! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
                                     if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
                                     DontDestroy.Mon -= skokrazoshibsa * 5;
                                     Oshibsa();
@@ -283,8 +283,8 @@ public class Move : MonoBehaviour
                                 {
                                     skokrazoshibsa += 1;
                                     skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, она младше " + zadanie3 + "!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, она младше " + zadanie3 + "!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
+                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, она младше " + zadanie3 + "! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
+                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, она младше " + zadanie3 + "! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
                                     if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
                                     DontDestroy.Mon -= skokrazoshibsa * 5;
                                     Oshibsa();
@@ -295,8 +295,8 @@ public class Move : MonoBehaviour
                         {
                             skokrazoshibsa += 1;
                             skokrazoshibsa2 += 1;
-                            if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, цвет волос не тот!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                            if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, цвет волос не тот!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
+                            if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, цвет волос не тот! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
+                            if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, цвет волос не тот! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
                             if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
                             DontDestroy.Mon -= skokrazoshibsa * 5;
                             Oshibsa();
@@ -306,8 +306,8 @@ public class Move : MonoBehaviour
                     {
                         skokrazoshibsa += 1;
                         skokrazoshibsa2 += 1;
-                        if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, ей нет 18!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                        if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, ей нет 18!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
+                        if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, ей нет 18! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
+                        if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, ей нет 18! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
                         if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
                         DontDestroy.Mon -= skokrazoshibsa * 5;
                         Oshibsa();
@@ -317,8 +317,8 @@ public class Move : MonoBehaviour
                 {
                     skokrazoshibsa += 1;
                     skokrazoshibsa2 += 1;
-                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, она тупая папарацци!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, она тупая папарацци!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
+                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, она тупая папарацци! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
+                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, она тупая папарацци! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
                     if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
                     DontDestroy.Mon -= skokrazoshibsa * 5;
                     Oshibsa();
@@ -328,8 +328,8 @@ public class Move : MonoBehaviour
             {
                 skokrazoshibsa += 1;
                 skokrazoshibsa2 += 1;
-                if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у нее, ***, у него подвох!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у нее, ***, у него подвох!, это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
+                if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у нее, ***, у него подвох! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
+                if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у нее, ***, у него подвох! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
                 if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
                 DontDestroy.Mon -= skokrazoshibsa * 5;
                 Oshibsa();
