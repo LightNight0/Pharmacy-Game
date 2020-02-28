@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 {
     public SpriteRenderer _sprite = null;
     public float Speed = 1f;
-    public static float timer = 60;
+    public static float timer = 180;
     public Animator contentPanel;
     public Animator TextPanel;
     public Animator ScorePanel;

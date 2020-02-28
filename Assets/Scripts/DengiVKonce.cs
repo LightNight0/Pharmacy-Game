@@ -25,7 +25,7 @@ public class DengiVKonce : MonoBehaviour
     {
         //DontDestroy.Mon = skok * 25;
         //добавить глобальную переменную и скрипт для хранеия данных
-        if (gameObject.tag == "SD") Deffki.text = "Запущенно Деффок: " + skok;
+        if (gameObject.tag == "SD") Deffki.text = " " + skok;
         if (gameObject.tag == "SM")
         {
             if (Move.skokrazoshibsa2 == 0) Money.text = "Кол-во Денег За День: " + ((skok * 25) + (skokDa * 25)) + "$";

@@ -21,7 +21,7 @@ public class TextDen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OtlDen.text = "Отложить Все На Лекарство: " + (DontDestroy.Lek + Timer.Lekabuff) + "/1000$"; 
+        OtlDen.text = "Отложить Все На Лекарство: " + (DontDestroy.Lek + Timer.Lekabuff) + "/1500$"; 
         PerHP.text = Timer.zavotdeneg1 + "%";
         PerZV.text = Timer.zavotdeneg2 + "%";
         Rashodi.text = "Ежедневные Расходы: " + (Timer.zavotdeneg + 10) + "$";

@@ -46,6 +46,7 @@ public class Move : MonoBehaviour
 
     void Update()
     {
+        Move_Bitch();
         if (ag1 == 1)
         {
             model.transform.position = model.transform.position + new Vector3(0.15f, 0);
@@ -372,7 +373,7 @@ public class Move : MonoBehaviour
     void D()
     {
         PanePlay1();
-        YDText.text = "Вас уволили и вы умерли от ломки!";
+        YDText.text = "Вас уволили!";
         YD.enabled = true;
         bool isHidden = YD.GetBool("isHidden");
         YD.SetBool("isHidden", !isHidden);
@@ -390,7 +391,7 @@ public class Move : MonoBehaviour
 
     IEnumerator SAS()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3.0f);
         DontDestroy.nark = false;
         ag1 = 3;
         DialogPanel.enabled = true;
@@ -403,6 +404,7 @@ public class Move : MonoBehaviour
         aga = 0;
         ag1 = 0;
         Timer.last = 0;
+        Move_Bitch();
     }
 
     IEnumerator SIS()
@@ -418,6 +420,7 @@ public class Move : MonoBehaviour
         aga = 0;
         ag1 = 0;
         Timer.last = 0;
+        Move_Bitch();
     }
 
     IEnumerator Osh()
