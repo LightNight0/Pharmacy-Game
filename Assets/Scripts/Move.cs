@@ -161,6 +161,7 @@ public class Move : MonoBehaviour
                         {
                             if (zadanie2 == 0)
                             {
+                                Story.skokpropdev[Timer.provDen - 1] += 1;
                                 DengiVKonce.skok += 1;
                                 DontDestroy.Mon += 25;
                             }
@@ -168,6 +169,7 @@ public class Move : MonoBehaviour
                             {
                                 if (ModelsBio.charectirtO1 == 1)
                                 {
+                                    Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
                                     DontDestroy.Mon += 25;
                                 }
@@ -186,6 +188,7 @@ public class Move : MonoBehaviour
                             {
                                 if (ModelsBio.charectirtO2 == 1)
                                 {
+                                    Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
                                     DontDestroy.Mon += 25;
                                 }
@@ -204,6 +207,7 @@ public class Move : MonoBehaviour
                             {
                                 if (ModelsBio.charectirtO2 == 2)
                                 {
+                                    Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
                                     DontDestroy.Mon += 25;
                                 }
@@ -222,6 +226,7 @@ public class Move : MonoBehaviour
                             {
                                 if (ModelsBio.charectirtO2 == 3)
                                 {
+                                    Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
                                     DontDestroy.Mon += 25;
                                 }
@@ -240,6 +245,7 @@ public class Move : MonoBehaviour
                             {
                                 if (ModelsBio.charectirtO2 <= 3 && ModelsBio.charectirtO2 > 0)
                                 {
+                                    Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
                                     DontDestroy.Mon += 25;
                                 }
@@ -258,6 +264,7 @@ public class Move : MonoBehaviour
                             {
                                 if (ModelsBio.charectirtO3 <= zadanie3)
                                 {
+                                    Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
                                     DontDestroy.Mon += 25;
                                 }
@@ -276,6 +283,7 @@ public class Move : MonoBehaviour
                             {
                                 if (ModelsBio.charectirtO3 >= zadanie3)
                                 {
+                                    Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
                                     DontDestroy.Mon += 25;
                                 }

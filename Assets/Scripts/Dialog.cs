@@ -31,32 +31,67 @@ public class Dialog : MonoBehaviour
             pers = GameObject.FindWithTag("Model");
             if (pers.name == "Ber(Clone)")
             {
+                var color = DialogB.color;
+                color.r = 0.0f;
+                color.g = 1.0f;
+                color.b = 0.0f;
+                DialogB.color = color;
                 DialogB.text = "Пропусти меня, мне нужно встретится с отцом моего ребенка, он вокалист в группе!";
             }
             if (pers.name == "BW(Clone)")
             {
+                var color = DialogB.color;
+                color.r = 0.0f;
+                color.g = 1.0f;
+                color.b = 0.0f;
+                DialogB.color = color;
                 DialogB.text = "Я представитель компании \"SexyMyzTorg\", у меня есть деловое предложение к группе, пропусти.";
             }
             if (pers.name == "Nark(Clone)")
             {
+                var color = DialogB.color;
+                color.r = 0.0f;
+                color.g = 1.0f;
+                color.b = 0.0f;
+                DialogB.color = color;
                 DialogB.text = "Привет, слушай, можешь занять мне 250$?\n Я обязательно верну как-нибудь!";
                 if (DontDestroy.nark == true) DialogB.text = "Привет, ты меня сильно выручил, вот и я в долгу не остнусь.\nВижу тебе не очень хорошо, держи, это поможет.";
             }
             if (pers.name == "Rep(Clone)")
             {
+                var color = DialogB.color;
+                color.r = 0.0f;
+                color.g = 1.0f;
+                color.b = 0.0f;
+                DialogB.color = color;
                 DialogB.text = "А, привет, пропусти пожалуйста, я дам тебе 500$.";
                 if (DontDestroy.report1 == false && Timer.provDen == 11) DialogB.text = "Снова привет, пропусти пожалуйста, я дам тебе 750$.";
             }
             if (pers.name == "TransB(Clone)")
             {
+                var color = DialogB.color;
+                color.r = 0.0f;
+                color.g = 1.0f;
+                color.b = 0.0f;
+                DialogB.color = color;
                 DialogB.text = "Даров, пропусти к ним, будь так добр, или тебе не поздоровится.";
             }
             if (pers.name == "TryFan(Clone)")
             {
+                var color = DialogB.color;
+                color.r = 0.0f;
+                color.g = 1.0f;
+                color.b = 0.0f;
+                DialogB.color = color;
                 DialogB.text = "Я самая преданная фанатка, пропусти пожалуйста, я точно им понравлюсь. Я очень сильно хочу их увидеть!";
             }
             if (pers.name == "Nark2(Clone)")
             {
+                var color = DialogB.color;
+                color.r = 0.0f;
+                color.g = 1.0f;
+                color.b = 0.0f;
+                DialogB.color = color;
                 DialogB.text = "Слушай, ты какой-то слишком напряженный, прими это - расслабься.\nНу как, теперь пропустишь меня?";
             }
             //
@@ -64,6 +99,11 @@ public class Dialog : MonoBehaviour
         }
         if (Move.aga == 2)
         {
+            var color = DialogB.color;
+            color.r = 0.0f;
+            color.g = 0.0f;
+            color.b = 0.0f;
+            DialogB.color = color;
             DialogB.text = "Спасибо";
             drop = 0;
             if (otv == 2 && pers.name != "Nark(Clone)" && pers.name != "Rep(Clone)")
@@ -82,13 +122,21 @@ public class Dialog : MonoBehaviour
         }
         if (Move.aga == 3)
         {
-            
+            var color = DialogB.color;
+            color.r = 0.0f;
+            color.b = 0.0f;
+            color.g = 0.0f;
+            DialogB.color = color;
             DialogB.text = "Да пошёл ты!";
             drop = 0;
         }
         if (Move.aga == 104)
         {
-
+            var color = DialogB.color;
+            color.r = 0.0f;
+            color.g = 0.0f;
+            color.b = 1.0f;
+            DialogB.color = color;
             DialogB.text = "Привет, ты меня сильно выручил, вот и я в долгу не остнусь.\nВижу тебе не очень хорошо, держи, это поможет.";
             //drop = 0;
         }
@@ -106,22 +154,54 @@ public class Dialog : MonoBehaviour
 
             DialogB.text = strArr[otvet];
             otv = otvet;
+
+            if (otvet == 2)
+            {
+                var color = DialogB.color;
+                color.r = 0.7f;
+                color.b = 1.0f;
+                color.g = 0.0f;
+                DialogB.color = color;
+            }
+            else
+            {
+                var color = DialogB.color;
+                color.r = 0.0f;
+                color.b = 0.0f;
+                color.g = 0.0f;
+                DialogB.color = color;
+            }
         }
         else Frazi();
     }
 
     public void UFan()
     {
+        var color = DialogB.color;
+        color.r = 0.0f;
+        color.g = 0.0f;
+        color.b = 0.0f;
+        DialogB.color = color;
         DialogB.text = ModelsBio.fan[ModelsBio.charectirt1];
     }
 
     public void Dosmotrr()
     {
+        var color = DialogB.color;
+        color.r = 0.0f;
+        color.g = 0.0f;
+        color.b = 0.0f;
+        DialogB.color = color;
         DialogB.text = "<Вы Нашли: " + ModelsBio.ves[ModelsBio.charectirtO2 - 1] + ">";
     }
 
     public void HowOld()
     {
+        var color = DialogB.color;
+        color.r = 0.0f;
+        color.g = 0.0f;
+        color.b = 0.0f;
+        DialogB.color = color;
         DialogB.text = ModelsBio.old[ModelsBio.charectirt3] + ModelsBio.charectirtO3;
     }
 
