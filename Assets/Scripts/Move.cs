@@ -163,7 +163,7 @@ public class Move : MonoBehaviour
                             {
                                 Story.skokpropdev[Timer.provDen - 1] += 1;
                                 DengiVKonce.skok += 1;
-                                DontDestroy.Mon += 25;
+                                DontDestroy.Mon += 12;
                             }
                             if (zadanie2 == 1) //проверка на фанатку
                             {
@@ -171,7 +171,7 @@ public class Move : MonoBehaviour
                                 {
                                     Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 25;
+                                    DontDestroy.Mon += 12;
                                 }
                                 else
                                 {
@@ -190,7 +190,7 @@ public class Move : MonoBehaviour
                                 {
                                     Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 25;
+                                    DontDestroy.Mon += 12;
                                 }
                                 else
                                 {
@@ -209,7 +209,7 @@ public class Move : MonoBehaviour
                                 {
                                     Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 25;
+                                    DontDestroy.Mon += 12;
                                 }
                                 else
                                 {
@@ -228,7 +228,7 @@ public class Move : MonoBehaviour
                                 {
                                     Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 25;
+                                    DontDestroy.Mon += 12;
                                 }
                                 else
                                 {
@@ -247,7 +247,7 @@ public class Move : MonoBehaviour
                                 {
                                     Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 25;
+                                    DontDestroy.Mon += 12;
                                 }
                                 else
                                 {
@@ -266,7 +266,7 @@ public class Move : MonoBehaviour
                                 {
                                     Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 25;
+                                    DontDestroy.Mon += 12;
                                 }
                                 else
                                 {
@@ -285,7 +285,7 @@ public class Move : MonoBehaviour
                                 {
                                     Story.skokpropdev[Timer.provDen - 1] += 1;
                                     DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 25;
+                                    DontDestroy.Mon += 12;
                                 }
                                 else
                                 {

@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 {
     public SpriteRenderer _sprite = null;
     public float Speed = 1f;
-    public static float timer = 180;//180;
+    public static float timer = 90;//180;
     public Animator contentPanel;
     public Animator TextPanel;
     public Animator ScorePanel;
@@ -44,6 +44,9 @@ public class Timer : MonoBehaviour
     public static Slider hpbiff;
     public static Slider zvbiff;
     // для релога дня
+
+    public GameObject PanQuestions;
+    public GameObject PanDaNet;
 
     public GameObject knopka;
     public GameObject knopkaPause;
@@ -542,13 +545,27 @@ public class Timer : MonoBehaviour
     {
         if (Move.aga == 1)
         {
-            contentPanel.enabled = true;
-            bool isHidden = contentPanel.GetBool("isHidden");
-            contentPanel.SetBool("isHidden", !isHidden);
+            //contentPanel.enabled = true;
+            //bool isHidden = contentPanel.GetBool("isHidden");
+            //contentPanel.SetBool("isHidden", !isHidden);
 
-            PanelQuestions.enabled = true;
-            bool izHidden = PanelQuestions.GetBool("isHidden");
-            PanelQuestions.SetBool("isHidden", !izHidden);
+            //PanelQuestions.enabled = true;
+            //bool izHidden = PanelQuestions.GetBool("isHidden");
+            //PanelQuestions.SetBool("isHidden", !izHidden);
+            if (PanQuestions.active == false)
+            {
+                //PanDaNet.active = false;
+                PanQuestions.active = true;
+                return;
+            }
+
+            if (PanQuestions.active == true)
+            {
+                //PanDaNet.active = true;
+                PanQuestions.active = false;
+                return;
+            }
+
         }
     }
 
