@@ -144,7 +144,7 @@ public class Timer : MonoBehaviour
         if (cho == 0)
         {
             delta = timerEnd - DateTime.Now;
-            Debug.Log(delta.Minutes.ToString("00") + ":" + delta.Seconds.ToString("00"));
+            //Debug.Log(delta.Minutes.ToString("00") + ":" + delta.Seconds.ToString("00"));
             if (delta.TotalSeconds <= 0)
             {
                 Debug.Log("The END");

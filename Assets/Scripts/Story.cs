@@ -242,7 +242,7 @@ public class Story : MonoBehaviour
                 break;
             case 11:
                 KakovDenMap = Timer.provDen;
-                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
+                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().SpawnSuj3();
                 gameObject.GetComponent<Timer>().Quest();
                 if (DontDestroy.report1 == false) Spawner.ocheredforsujet = 0;
                 if (DontDestroy.report1 == false) PersForSujet = 8;
@@ -263,7 +263,7 @@ public class Story : MonoBehaviour
                 break;
             case 12:
                 KakovDenMap = Timer.provDen;
-                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
+                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().SpawnSuj3();
                 gameObject.GetComponent<Timer>().Quest();
                 Spawner.ocheredforsujet = 0;
                 PersForSujet = 11;
@@ -275,7 +275,7 @@ public class Story : MonoBehaviour
                 break;
             case 13:
                 KakovDenMap = Timer.provDen;
-                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
+                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().SpawnSuj3();
                 gameObject.GetComponent<Timer>().Quest();
                 Yslovie = 13;
                 Spawner.ocheredforsujet = 0;
@@ -293,7 +293,7 @@ public class Story : MonoBehaviour
                 break;
             case 14:
                 KakovDenMap = Timer.provDen;
-                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
+                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().SpawnSuj3();
                 gameObject.GetComponent<Timer>().Quest();
                 Spawner.ocheredforsujet = 0;
                 PersForSujet = 13;
@@ -305,7 +305,7 @@ public class Story : MonoBehaviour
                 break;
             case 15:
                 KakovDenMap = Timer.provDen;
-                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().spawnSuj3();
+                if (DontDestroy.nark == true && gameObject.GetComponent<Timer>().hp.value <= 30) spawn.GetComponent<Spawner>().SpawnSuj3();
                 gameObject.GetComponent<Timer>().Quest();
                 KakoiTyr.text = "Тур \"Средний Запад\"";
                 KakoiDen.text = "День Пятый";
