@@ -26,7 +26,6 @@ public class Manger : MonoBehaviour
 
     public void Story()
     {
-        //gameObject.GetComponent<Sound>().RandomSong();
         Timer.provDen = 1;//1
         Timer.Den = 1;
         SceneManager.LoadScene("Story_Mode");
@@ -37,8 +36,6 @@ public class Manger : MonoBehaviour
 
         Timer.provDen = 4;//4;
         DontDestroy.Mon = DontDestroy.MonAct[0];
-        //DontDestroy.Lek = DontDestroy.LekAct[0];
-        //DontDestroy.Zav = DontDestroy.ZavAct[0];
 
         SceneManager.LoadScene("Story_Mode");
     }
@@ -56,7 +53,6 @@ public class Manger : MonoBehaviour
     public void Endless()
     {
         Move.skokrazoshibsa = 0;
-        //gameObject.GetComponent<Sound>().RandomSong();
         SceneManager.LoadScene("Endless_Mode");
     }
 

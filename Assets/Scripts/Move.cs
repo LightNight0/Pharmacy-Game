@@ -79,11 +79,6 @@ public class Move : MonoBehaviour
 
     public void Move_Bitch()
     {
-        //ControllRoom.ochered = 1;
-        //contentPanel.enabled = true;
-        //aga = 1;
-        //bool isHidden = contentPanel.GetBool("isHidden");
-        //contentPanel.SetBool("isHidden", !isHidden);
         if (aga == 0 && Timer.cho < 1) 
         {
             model = GameObject.FindWithTag("Model");

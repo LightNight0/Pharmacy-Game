@@ -90,15 +90,6 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        //DontDestroy.Mon = 0;
-        //DontDestroy.Lek = 0;
-
-        //if (DontDestroy.actII == true)
-        //{
-        //    hp.value = DontDestroy.HpAct[0].value;
-        //    zv.value = DontDestroy.ZvAct[0].value;
-        //}
-
         timerEnd = DateTime.Now.AddSeconds(timer);
         TimeToLast = GetComponent<Text>();
 
@@ -144,7 +135,6 @@ public class Timer : MonoBehaviour
         if (cho == 0)
         {
             delta = timerEnd - DateTime.Now;
-            //Debug.Log(delta.Minutes.ToString("00") + ":" + delta.Seconds.ToString("00"));
             if (delta.TotalSeconds <= 0)
             {
                 Debug.Log("The END");
@@ -173,7 +163,6 @@ public class Timer : MonoBehaviour
                 PanePlay();
                 PanelO();
                 NextDay();
-                //Quest();
                 Vikl();
                 gameObject.GetComponent<Sound>().SoundOff();
                 if (proWQ == true) WhQuF();
@@ -188,7 +177,6 @@ public class Timer : MonoBehaviour
         }
         if (cho == 5)
         {
-            //Debug.Log("TI LOH");
             var color = _sprite.color;
             color.a = 0.0f;
             _sprite.color = color;
@@ -332,23 +320,14 @@ public class Timer : MonoBehaviour
         SmenaMus();
         string lname = SceneManager.GetActiveScene().name;
         if (lname == "Endless_Mode")  Move.skokrazoshibsa = 0;
-        //Quest();
-        //Move.zadanie1 = 0;
-        //Move.zadanie2 = 0;
-        //Move.zadanie3 = 0;
-        //lekbuff = DontDestroy.Lek;
         lekbuff = Lekabuff;
         zv.value += DontDestroy.Zav * 2.5f;
-        //hp.value = hp.value / ((zv.value + 100.0f)/100.0f);
         hp.value = hp.value / (1.0f + (zv.value / 100.0f));
         hpbuf = hp.value;
         zvbuf = zv.value;
 
         Den += 1;
         provDen += 1;
-        //Denek.text = "День тура: " + Den + "                              Сегодняшнее задание:";
-        //Denek2.text = "День тура: " + Den + "                              Сегодняшнее задание:";
-
         if (provDenek == 1)
         {
             ViborM();
@@ -361,7 +340,6 @@ public class Timer : MonoBehaviour
         }
         if (provDenek2 == 1)
         {
-            //ViborO();
             Otl.GetComponent<Toggle>().isOn = false;
         }
 
@@ -545,13 +523,6 @@ public class Timer : MonoBehaviour
     {
         if (Move.aga == 1)
         {
-            //contentPanel.enabled = true;
-            //bool isHidden = contentPanel.GetBool("isHidden");
-            //contentPanel.SetBool("isHidden", !isHidden);
-
-            //PanelQuestions.enabled = true;
-            //bool izHidden = PanelQuestions.GetBool("isHidden");
-            //PanelQuestions.SetBool("isHidden", !izHidden);
             if (PanQuestions.active == false)
             {
                 //PanDaNet.active = false;
@@ -590,14 +561,11 @@ public class Timer : MonoBehaviour
     public void Vkl()
     {
         knopka.active = true;
-        //knopkaPause.active = true;
-        //if (Den != 1) gameObject.GetComponent<Sound>().RandomSong();
     }
 
     public void Vikl()
     {
         knopka.active = false;
-        //knopkaPause.active = false;
     }
 
     void Zadnik()
@@ -633,24 +601,6 @@ public class Timer : MonoBehaviour
 
     int pauseorplay = 0;
     DateTime deltabuff;
-
-    public void Pause()
-    {
-        //if (pauseorplay == 0)
-        //{
-        //    deltabuff = timerEnd;
-        //    Time.timeScale = 0;
-        //    pauseorplay = 1;
-        //    return;
-        //}
-        //if (pauseorplay == 1)
-        //{
-        //    timerEnd = deltabuff;
-        //    Time.timeScale = 1;
-        //    pauseorplay = 0;
-        //    return;
-        //}
-    }
 
     int provaudio = 0;
 

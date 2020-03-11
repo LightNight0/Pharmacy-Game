@@ -47,9 +47,7 @@ public class Story : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //zavbar.active = false;
-
-        //JIR();
+       
     }
 
     // Update is called once per frame
@@ -116,8 +114,6 @@ public class Story : MonoBehaviour
                 gameObject.GetComponent<Timer>().DayQuest2.text = strArr[Move.zadanie1 - 1];
                 gameObject.GetComponent<Timer>().DayQuest.text += "                                        " + strArr2[0];
                 gameObject.GetComponent<Timer>().DayQuest2.text += "                                        " + strArr2[0];
-                //gameObject.GetComponent<Timer>().DayQuest.text += "любым";
-                //gameObject.GetComponent<Timer>().DayQuest2.text += "любым";
 
                 KakoiTyr.text = "Тур в поддержку альбома";
                 KakoiDen.text = "День Третий";
@@ -136,10 +132,6 @@ public class Story : MonoBehaviour
 
                 DontDestroy.actII = true;
                 DontDestroy.MonAct[0] = DontDestroy.Mon;
-                //DontDestroy.LekAct[0] = DontDestroy.Lek;
-                //DontDestroy.ZavAct[0] = DontDestroy.Zav;
-                //DontDestroy.HpAct[0].value = gameObject.GetComponent<Timer>().hp.value;
-                //DontDestroy.ZvAct[0].value = gameObject.GetComponent<Timer>().zv.value;
                 Move.zadanie1 = 1;
                 Move.zadanie2 = 23;
                 Move.zadanie3 = 0;
@@ -205,7 +197,6 @@ public class Story : MonoBehaviour
                 KakoiTyr.text = "Тур \"Восточное побережье\"";
                 KakoiDen.text = "День Четвертый";
                 KakoiText.text = "Дело плохо - меня тянет на развлечения всё сильнее. Я чувствую что у меня началась зависимость. Надо что-то с этим делать! Стоит узнать что-нибудь о способах её побороть.";
-                // KakaiaCel.text = "Моя цель на сегодня: Попытаться что-то разузнать про способы побороть зависимость.";\
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
                 break;
             case 8:
@@ -217,7 +208,6 @@ public class Story : MonoBehaviour
                 KakoiTyr.text = "Тур \"Восточное побережье\"";
                 KakoiDen.text = "День Пятый";
                 KakoiText.text = "Вчера от ребят из группы я узнал, что  заработав достаточно денег можно пройти курс лечения, избавляющий от зависимости. \nХоть прямо сейчас я чувствую себя неплохо, пора задуматься о своем будещем. ";
-                //KakaiaCel.text = "Начать копить деньги на лечение."; //"Моя цель на сегодня:";
                 KakaiaCel.text = ""; //"Моя цель на сегодня:";
                 break;
             case 9:
@@ -705,7 +695,6 @@ public class Story : MonoBehaviour
                 break;
             case 131:
                 Yslovie = 0;
-                //gameObject.GetComponent<Timer>().PanelSt();
                 Timer.provDen += 1;
                 Timer.Den += 1;
                 PerehoDik();

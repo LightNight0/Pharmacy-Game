@@ -7,7 +7,6 @@ public class Dialog : MonoBehaviour
 {
     public Text DialogB;
     int drop = 0;
-    //bool vziatkaDa = false;
     int otv = 0;
 
     int zapomnil = 100;
@@ -18,7 +17,7 @@ public class Dialog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //DialogB = GetComponent<Text>();
+        
     }
 
     // Update is called once per frame
@@ -94,7 +93,6 @@ public class Dialog : MonoBehaviour
                 DialogB.color = color;
                 DialogB.text = "Слушай, ты какой-то слишком напряженный, прими это - расслабься.\nНу как, теперь пропустишь меня?";
             }
-            //
             drop = 1;
         }
         if (Move.aga == 2)
@@ -116,7 +114,6 @@ public class Dialog : MonoBehaviour
             {
                 if (DontDestroy.report1 == false && Timer.provDen == 11) DontDestroy.Mon += 750;
                 else DontDestroy.Mon += 500;
-                //DengiVKonce.skokDa -= 1;
                 pers.name = "Pshel";
             }
         }
@@ -138,7 +135,6 @@ public class Dialog : MonoBehaviour
             color.b = 1.0f;
             DialogB.color = color;
             DialogB.text = "Привет, ты меня сильно выручил, вот и я в долгу не остнусь.\nВижу тебе не очень хорошо, держи, это поможет.";
-            //drop = 0;
         }
     }
 

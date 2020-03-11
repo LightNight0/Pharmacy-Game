@@ -14,7 +14,6 @@ public class Sound : MonoBehaviour
 
     public float volume = 0.25f;
     public AudioMixer audiomixer;
-    //public AudioMixer audiomixer2;
 
     // Start is called before the first frame update
     void Start()
@@ -93,9 +92,6 @@ public class Sound : MonoBehaviour
             volume += 0.05f;
             ToChtoIgraet = GameObject.Find("DontDestroy(Clone)");
             ToChtoIgraet.GetComponent<AudioSource>().volume += 0.05f;
-        
-            //ToChtoIgraet.GetComponent<AudioSource>().outputAudioMixerGroup = 0.05f; 
-            //audiomixer.GetFloat("volume", out volume);
             SoundOn();
         }
         else
@@ -119,8 +115,6 @@ public class Sound : MonoBehaviour
             volume -= 0.05f;
             ToChtoIgraet = GameObject.Find("DontDestroy(Clone)");
             ToChtoIgraet.GetComponent<AudioSource>().volume -= 0.05f;
-
-            //audiomixer.GetFloat("volume", out volume);
             SoundOff();
         }
         else

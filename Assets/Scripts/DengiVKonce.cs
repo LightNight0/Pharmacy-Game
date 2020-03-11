@@ -17,14 +17,11 @@ public class DengiVKonce : MonoBehaviour
         if (gameObject.tag == "SD") Deffki = GetComponent<Text>();
         if (gameObject.tag == "SM") Money = GetComponent<Text>();
         if (gameObject.tag == "SAM") AllMoney = GetComponent<Text>();
-        //добавить глобальную переменную и скрипт для хранения данных 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //DontDestroy.Mon = skok * 25;
-        //добавить глобальную переменную и скрипт для хранения данных
         if (gameObject.tag == "SD") Deffki.text = " " + skok;
         if (gameObject.tag == "SM")
         {

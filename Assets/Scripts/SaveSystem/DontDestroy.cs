@@ -44,6 +44,6 @@ public class DontDestroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Timer.zv.value = Zav;
+        
     }
 }

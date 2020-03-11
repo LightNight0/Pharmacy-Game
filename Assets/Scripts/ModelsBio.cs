@@ -9,10 +9,6 @@ public class ModelsBio : MonoBehaviour
     GameObject Who;
     public int stat = 0;
 
-    //public static string charectirt1;
-    //public static string charectirt2;
-    //public static string charectirt3;
-
     public static int charectirt1 = 0;
     public static int charectirt2 = 0;
     public static int charectirt3 = 0;
@@ -228,7 +224,6 @@ public class ModelsBio : MonoBehaviour
     void RandomizerChar1()
     {
         int firstchar;
-        //string[] strArr = new string[5] { "Еще какая!, Микки мой любимый член группы!", "А что за группа ?", "Я купила все их 4 альбома", "Конечно, всех 3 ребят зняю лично", "Это мой первый концерт, но я их очень люблю" };
         firstchar = Random.Range(0, 5);
         charectirt1 = firstchar;
         if (firstchar == 0 || firstchar == 2 || firstchar == 4)
@@ -244,10 +239,8 @@ public class ModelsBio : MonoBehaviour
     void RandomizerChar2()
     {
         int firstchar;
-        //string[] strArr = new string[5] { "LCD-TV", "PlanB", "Kokos", "Фотокамера", "Контрацептивы" };
         firstchar = Random.Range(0, 5);
         charectirt2 = firstchar;
-        //if (firstchar > 2) charectirtO2 = 1;
         if (firstchar == 0) charectirtO2 = 1; // "LCD-TV"
         if (firstchar == 1) charectirtO2 = 2; // "PlanB"
         if (firstchar == 2) charectirtO2 = 3; // "Kokos"
@@ -261,7 +254,6 @@ public class ModelsBio : MonoBehaviour
         int firstchar;
         firstchar = Random.Range(15, 29);
         charectirtO3 = firstchar;
-        //string[] strArr = new string[3] { "Я уже совсем взрослая, мне: ", "Такое неприлично спрашивать, но раз это важно: ", "Уже можно: " };
         firstchar = Random.Range(0, 3);
         charectirt3 = firstchar;
     }

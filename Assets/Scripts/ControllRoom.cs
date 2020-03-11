@@ -18,11 +18,10 @@ public class ControllRoom : MonoBehaviour
 
     void FixedUpdate()
     {
-        //TimeSpan delta = timerEnd - DateTime.Now;
         TimeSpan delta = Timer.delta;
         if (delta.TotalSeconds >= 0)
         {
-            TimeToLast.text =/*"Времени Осталось: " + */delta.Minutes.ToString("00") + ":" + delta.Seconds.ToString("00");
+            TimeToLast.text = delta.Minutes.ToString("00") + ":" + delta.Seconds.ToString("00");
             if (delta.TotalSeconds < 11)
             {
                 var color = TimeToLast.color;

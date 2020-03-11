@@ -31,12 +31,8 @@ public class Spawner : MonoBehaviour
             modwho = Story.PersForSujet;
             ocheredforsujet = 10;
         }
-        //if (modwho != zapomnil && modwho != zapomnil2)
         if (modwho != zapom[0] && modwho != zapom[1] && modwho != zapom[2] && modwho != zapom[3] && modwho != zapom[4] && modwho != zapom[5] && modwho != zapom[6])
         {
-            //zapomnil2 = zapomnil;
-            //zapomnil = modwho;
-
             zapom[6] = zapom[5];
             zapom[5] = zapom[4];
             zapom[4] = zapom[3];
@@ -44,52 +40,51 @@ public class Spawner : MonoBehaviour
             zapom[2] = zapom[1];
             zapom[1] = zapom[0];
             zapom[0] = modwho;
-            //Debug.Log("TI Pidr");
             ocheredforsujet += 1;
 
             switch (modwho)
             {
                 case -6:
-                    SpawnSAP14(); //Debug.Log("TI LOH");
+                    SpawnSAP14(); 
                     break;
                 case -5:
-                    SpawnSAP13(); //Debug.Log("TI LOH");
+                    SpawnSAP13();
                     break;
                 case -4:
-                    SpawnSAP12(); //Debug.Log("TI LOH");
+                    SpawnSAP12();
                     break;
                 case -3:
-                    SpawnSAP11(); //Debug.Log("TI LOH");
+                    SpawnSAP11(); 
                     break;
                 case -2:
-                    SpawnSAP10(); //Debug.Log("TI LOH");
+                    SpawnSAP10(); 
                     break;
                 case -1:
-                    SpawnSAP9(); //Debug.Log("TI LOH");
+                    SpawnSAP9(); 
                     break;
                 case 0:
-                    SpawnSAP();  //Debug.Log("TI LOH");
+                    SpawnSAP();  
                     break;
                 case 1:
-                    SpawnSAP2(); //Debug.Log("TI LOH");
+                    SpawnSAP2(); 
                     break;
                 case 2:
-                    SpawnSAP3(); //Debug.Log("TI LOH");
+                    SpawnSAP3(); 
                     break;
                 case 3:
-                    SpawnSAP4(); //Debug.Log("TI LOH");
+                    SpawnSAP4(); 
                     break;
                 case 4:
-                    SpawnSAP5(); //Debug.Log("TI LOH");
+                    SpawnSAP5();
                     break;
                 case 5:
-                    SpawnSAP6(); //Debug.Log("TI LOH");
+                    SpawnSAP6(); 
                     break;
                 case 6:
-                    SpawnSAP7(); //Debug.Log("TI LOH");
+                    SpawnSAP7(); 
                     break;
                 case 7:
-                    SpawnSAP8(); //Debug.Log("TI LOH");
+                    SpawnSAP8();
                     break;
                 case 8:
                     SpawnSuj1(); // Репортерша
@@ -239,9 +234,4 @@ public class Spawner : MonoBehaviour
     {
         whatToSpawnClone[14] = Instantiate(whatToSpawnPrefab[14], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
     }
-
-    //void spawnSAP4()
-    //{
-    //    whatToSpawnClone[3] = Instantiate(whatToSpawnPrefab[3], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
-    //}
 }
