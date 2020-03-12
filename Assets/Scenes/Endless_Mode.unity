@@ -364,7 +364,7 @@ MonoBehaviour:
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1982287740}
+  m_TargetGraphic: {fileID: 31655356}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1559,7 +1559,7 @@ MonoBehaviour:
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1681912745}
+  m_TargetGraphic: {fileID: 195923827}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -2507,10 +2507,10 @@ RectTransform:
   m_Father: {fileID: 1986659698}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -451.49994, y: 261.90002}
-  m_SizeDelta: {x: -912.15, y: -468.88}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -443, y: 256.9}
+  m_SizeDelta: {x: 122.85, y: 113.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &345778749
 Animator:
@@ -3149,7 +3149,7 @@ MonoBehaviour:
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1616625431}
+  m_TargetGraphic: {fileID: 388337023}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -3225,17 +3225,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389322473}
-  m_LocalRotation: {x: -0, y: -0, z: -0.34529814, w: 0.9384931}
+  m_LocalRotation: {x: 0, y: 0, z: 0.33380687, w: 0.94264156}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 345778748}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -40.4}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 39}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 94.29993, y: -5}
-  m_SizeDelta: {x: 55.53, y: 55.53}
+  m_AnchoredPosition: {x: 82.9, y: -0.7}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &389322475
 MonoBehaviour:
@@ -4450,7 +4450,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f7c2920024fc6144c9d235dca2eb660f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ef39d120ad76ab4bacb6ce90d7c356e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4572,15 +4572,15 @@ RectTransform:
   m_GameObject: {fileID: 651672174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1908208670}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 0}
+  m_SizeDelta: {x: 99.34, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &651672176
 MonoBehaviour:
@@ -4602,11 +4602,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_FontSize: 36
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5189,7 +5189,7 @@ MonoBehaviour:
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1284497184}
+  m_TargetGraphic: {fileID: 738774834}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -5498,10 +5498,10 @@ RectTransform:
   m_Father: {fileID: 345778748}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 112.6, y: 3.600006}
-  m_SizeDelta: {x: 131.14001, y: -82.8}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 106.5, y: 3.6}
+  m_SizeDelta: {x: 255.14, y: 33.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &798607293
 Animator:
@@ -5915,7 +5915,7 @@ MonoBehaviour:
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1990979259}
+  m_TargetGraphic: {fileID: 866095499}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -6632,15 +6632,15 @@ RectTransform:
   m_GameObject: {fileID: 1005217381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 572346160}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5.9000015, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 0}
+  m_SizeDelta: {x: 99.34, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1005217383
 MonoBehaviour:
@@ -6662,11 +6662,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_FontSize: 36
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -7053,7 +7053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1107909666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7657,7 +7657,7 @@ MonoBehaviour:
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 2102170391}
+  m_TargetGraphic: {fileID: 1203881256}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -9130,8 +9130,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 170.19995, y: 13.400024}
-  m_SizeDelta: {x: 132.73, y: 30}
+  m_AnchoredPosition: {x: 166.2, y: 3.6}
+  m_SizeDelta: {x: 131.73, y: 53.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1467851484
 MonoBehaviour:
@@ -9165,7 +9165,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -10225,7 +10225,7 @@ MonoBehaviour:
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1181371845}
+  m_TargetGraphic: {fileID: 1661585936}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -11208,7 +11208,7 @@ MonoBehaviour:
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 374269864}
+  m_TargetGraphic: {fileID: 1821723682}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -11745,7 +11745,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b5ba580d30e3690429f435d32f3a7e37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c92dc8ff5807a64fafb67d31da96b06, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12024,7 +12024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a08e278c5d1245442b64171588e9325c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c92dc8ff5807a64fafb67d31da96b06, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12736,7 +12736,7 @@ MonoBehaviour:
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1409323118}
+  m_TargetGraphic: {fileID: 1990692534}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -13087,7 +13087,7 @@ RectTransform:
   m_GameObject: {fileID: 2021468763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1924126105}
   m_RootOrder: 0
@@ -13117,11 +13117,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_FontSize: 40
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -13462,7 +13462,7 @@ MonoBehaviour:
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 619017}
+  m_TargetGraphic: {fileID: 2078084757}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:

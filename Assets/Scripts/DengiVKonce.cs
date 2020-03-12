@@ -25,10 +25,10 @@ public class DengiVKonce : MonoBehaviour
         if (gameObject.tag == "SD") Deffki.text = " " + skok;
         if (gameObject.tag == "SM")
         {
-            if (Move.skokrazoshibsa2 == 0) Money.text = "Кол-во Денег За День: " + ((skok * 25) + (skokDa * 25)) + "$";
-            if (Move.skokrazoshibsa2 == 1) Money.text = "Кол-во Денег За День: " + ((skok * 25) + (skokDa * 25) - 5) + "$";
-            if (Move.skokrazoshibsa2 == 2) Money.text = "Кол-во Денег За День: " + ((skok * 25) + (skokDa * 25) - 15) + "$";
-            if (Move.skokrazoshibsa2 == 3) Money.text = "Кол-во Денег За День: " + ((skok * 25) + (skokDa * 25) - 30) + "$";
+            if (Move.skokrazoshibsa2 == 0) Money.text = "Кол-во Денег За День: " + ((skok * 12) + (skokDa * 25)) + "$";
+            if (Move.skokrazoshibsa2 == 1) Money.text = "Кол-во Денег За День: " + ((skok * 12) + (skokDa * 25) - 5) + "$";
+            if (Move.skokrazoshibsa2 == 2) Money.text = "Кол-во Денег За День: " + ((skok * 12) + (skokDa * 25) - 15) + "$";
+            if (Move.skokrazoshibsa2 == 3) Money.text = "Кол-во Денег За День: " + ((skok * 12) + (skokDa * 25) - 30) + "$";
         }
         if (gameObject.tag == "SAM")
         {
