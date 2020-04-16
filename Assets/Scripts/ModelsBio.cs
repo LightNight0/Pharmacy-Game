@@ -6,20 +6,23 @@ public class ModelsBio : MonoBehaviour
 {
 
     public static string TypeM;
+    public static int Typepreparata = 0;
     GameObject Who;
     public int stat = 0;
 
-    public static int charectirt1 = 0;
+    public static int charectirt1 = 0;  //указывает на то, какая фраза будет выбранна
     public static int charectirt2 = 0;
     public static int charectirt3 = 0;
 
-    public static int charectirtO1 = 0;
+    public static int charectirtO1 = 0; //просто аргументы для рассчетов
     public static int charectirtO2 = 0;
     public static int charectirtO3 = 0;
 
-    public static string[] fan = new string[9] { "Еще какая! Микки мой любимый член группы!", "А что за группа?", "Я купила все их 4 альбома", "Конечно, всех 3 ребят знаю лично", "Это мой первый концерт, но я их очень люблю", "Самая Большая", "А по мне не видно?", "Самая большая фанатка в мире, люблю их досмерти", "Мне нет до них дела" };
-    public static string[] ves = new string[9] { "LCD-TV", "PlanB", "Kokos", "Фотокамера", "Контрацептивы", "Подвох", "Подвох и Ствол", "Пузожитель", "Куча бумаг и документов" };
-    public static string[] old = new string[3] { "Я уже совсем взрослая, мне: ", "Такое неприлично спрашивать, но раз это важно: ", "Уже можно: " };
+    public static int whatdozetoday = 0;
+
+    public static string[] recept = new string[6] { "I don't have it", "Yeah, here it is", "Well, if you need him so much, take it", "I don't have it, but i have knight...", "Here, but it’s without a seal, but maybe it will come in handy later, you can take it.", "Take it and give me my ticket to KillmyselfLand!" };
+    public static string[] partbilet = new string[7] { "I do not belong to any consignment", "I am an honest representative of the Republicans", "I'm from the Democratic Party", "I AM THE HEALER", "I'm starting to lose patience...", "I'm a home scientist-botanist.", "To any of both, just let me die!" };
+    public static string[] dozirovka = new string[8] { "I do not know the dosage", "25 milligrams", "70 milligrams", "120 milligrams", "None of your business", "I do not know, but I hope it works anyway...", "Just a couple of ounces, please sell.", "Over 9999 milligrams, please end this!" };
 
     // Start is called before the first frame update
     void Start()
@@ -36,226 +39,187 @@ public class ModelsBio : MonoBehaviour
     public void NewM()
     {
         Who = GameObject.FindWithTag("Model");
-        if (Who.name == "DarkHair1(Clone)" || Who.name == "DarkHair2(Clone)" || Who.name == "DarkHair3(Clone)" || Who.name == "DarkHair4(Clone)")
-        {
-            TypeM = "DarkHair";
-            Move.podhodit1 = 2;
-            stat = 1;
-            Hz();
-        }
-        if (Who.name == "RedHair1(Clone)" || Who.name == "RedHair2(Clone)" || Who.name == "RedHair3(Clone)" || Who.name == "RedHair4(Clone)")
-        {
-            TypeM = "RedHair";
-            Move.podhodit1 = 3;
-            stat = 2;
-            Hz();
-        }
-        if (Who.name == "BlondHair1(Clone)" || Who.name == "BlondHair2(Clone)" || Who.name == "BlondHair3(Clone)" || Who.name == "BlondHair4(Clone)")
-        {
-            TypeM = "BlondHair";
-            Move.podhodit1 = 1;
-            stat = 3;
-            Hz();
-        }
-        if (Who.name == "Trans1(Clone)" || Who.name == "Trans2(Clone)")
-        {
-            TypeM = "Ne";
-            Move.podhodit1 = 42;
-            stat = 4;
-            Hz();
-        }
-        // Для Сюжетки
-        if (Who.name == "TransB(Clone)")
-        {
-            TypeM = "Ne";
-            Move.podhodit1 = 42;
-            stat = 5;
-            Hz();
-        }
-        if (Who.name == "Ber(Clone)")
-        {
-            TypeM = "DarkHair";
-            Move.podhodit1 = 2; // 
-            stat = 6;
-            Hz();
-        }
-        if (Who.name == "BW(Clone)")
-        {
-            TypeM = "RedHair";
-            Move.podhodit1 = 3; // 
-            stat = 7;
-            Hz();
-        }
-        if (Who.name == "Nark(Clone)")
-        {
-            TypeM = "DarkHair";
-            Move.podhodit1 = 2; // 
-            stat = 8;
-            Hz();
-        }
-        if (Who.name == "Rep(Clone)")
-        {
-            TypeM = "DarkHair";
-            Move.podhodit1 = 2; // 
-            stat = 9;
-            Hz();
-        }
-        if (Who.name == "TryFan(Clone)")
-        {
-            TypeM = "BlondHair";
-            Move.podhodit1 = 1; // 
-            stat = 10;
-            Hz();
-        }
-        if (Who.name == "Nark2(Clone)")
-        {
-            TypeM = "BlondHair";
-            Move.podhodit1 = 2; // 
-            stat = 11;
-            Hz();
-        }
+        gameObject.GetComponent<Dialog>().RecptPanelVkl = true;
+        gameObject.GetComponent<Dialog>().AnadoVkl = false;
+        TypeM = Randompreparat();
+        stat = 1;
+        if (Who.name == "Nark2(Clone)") stat = 11;  //старик-наркоман
+        if (Who.name == "BW(Clone)") stat = 7;      //проверка сверху
+        if (Who.name == "TryFan(Clone)") stat = 10; //доктор, просящий рецепт для своих дел
+        if (Who.name == "TransB(Clone)") stat = 5;  //Псих-убийца ебать...
+        if (Who.name == "Nark(Clone)") stat = 8;    //с(т)ранный мужик который выращивает что-то при помощи препаратов
+        if (Who.name == "Ber(Clone)") stat = 6;     //какая-то телка, пока непридумал че делает
+        Hz();
     }
 
     void Hz()
     {
+        int ramdompls;
         switch (stat)
         {
             case 1:
-                RandomizerChar1(); //проверка на фана
-                RandomizerChar2(); //проверка на стафф
-                RandomizerChar3(); //проверка на совершенолетие
-
-                break;
-            case 2:
-                RandomizerChar1(); //проверка на фана
-                RandomizerChar2(); //проверка на стафф
-                RandomizerChar3(); //проверка на совершенолетие
-
-                break;
-            case 3:
-                RandomizerChar1(); //проверка на фана
-                RandomizerChar2(); //проверка на стафф
-                RandomizerChar3(); //проверка на совершенолетие
-                
-                break;
-            case 4:
-                RandomizerChar1(); //проверка на фана
-                charectirtO2 = 6; //RandomizerChar2(); //проверка на стафф
-                int firstchar;
-                firstchar = Random.Range(20, 29);
-                charectirtO3 = firstchar; //RandomizerChar3(); //проверка на совершенолетие
-
+                RandomizerCharRecept();     //проверка на рецепт
+                RandomizerCharDozirovka();  //проверка на дозировку
+                RandomizerCharPartia();     //проверка на партию
                 break;
             //Для Сюжетки
-            case 5: //Транс
+            case 5: //Псих-убийца ебать...
+                ramdompls = UnityEngine.Random.Range(0, 5);
+                Typepreparata = Timer.zadanie[0, ramdompls];
+                TypeM = Timer.preparati[0, ramdompls];
+
+                charectirt1 = 3;
+                charectirtO1 = 2;
+
+                charectirt2 = 4;
+                charectirtO2 = 2;
+
+                charectirt3 = 5;
+                charectirtO3 = 2;
+                break;
+            case 6: //какая-то телка, пока непридумал че делает
+                TypeM = "kill myself faster as I can.";
+
                 charectirt1 = 5;
                 charectirtO1 = 1;
 
                 charectirt2 = 6;
-                charectirtO2 = 7;
+                charectirtO2 = 1;
 
-                charectirt3 = 1;
-                charectirtO3 = 23;
+                charectirt3 = 7;
+                charectirtO3 = 1;
                 break;
-            case 6: // Беременная
-                charectirt1 = 6;
-                charectirtO1 = 1;
+            case 7: //проверка сверху
+                ramdompls = UnityEngine.Random.Range(0, 5);
+                Typepreparata = Timer.zadanie[0, ramdompls];
+                TypeM = Timer.preparati[0, ramdompls];
 
-                charectirt2 = 7;
-                charectirtO2 = 8;
-
-                charectirt3 = 1;
-                charectirtO3 = 25;
-                break;
-            case 7: // Бизнес телка
-                charectirt1 = 8;
+                charectirt1 = 0;
                 charectirtO1 = 2;
 
-                charectirt2 = 8;
-                charectirtO2 = 9;
-
-                charectirt3 = 1;
-                charectirtO3 = 28;
-                break;
-            case 8: // Нарко телка
-                charectirt1 = 8;
-                charectirtO1 = 2;
-
-                charectirt2 = 1;
+                charectirt2 = 2;
                 charectirtO2 = 2;
 
-                charectirt3 = 2;
-                charectirtO3 = 22;
+                charectirt3 = 3;
+                charectirtO3 = 2;
                 break;
-            case 9: // Репортерша
+            case 8: //с(т)ранный мужик который выращивает что-то при помощи препаратов
+                ramdompls = UnityEngine.Random.Range(0, 5);
+                Typepreparata = Timer.zadanie[0, ramdompls];
+                TypeM = Timer.preparati[0, ramdompls];
+
+                charectirt1 = 4;
+                charectirtO1 = 3;
+
+                charectirt2 = 5;
+                charectirtO2 = 2;
+
+                charectirt3 = 6;
+                charectirtO3 = 2;
+                break;
+            case 10: //доктор, просящий рецепт для своих дел
+                ramdompls = UnityEngine.Random.Range(0, 5);
+                Typepreparata = Timer.zadanie[0, ramdompls];
+                TypeM = "prescription";
+
                 charectirt1 = 0;
-                charectirtO1 = 1;
+                charectirtO1 = 3;
 
                 charectirt2 = 3;
-                charectirtO2 = 4;
+                charectirtO2 = 2;
 
-                charectirt3 = 2;
-                charectirtO3 = 20;
+                charectirt3 = 4;
+                charectirtO3 = 2;
                 break;
-            case 10: // Убермегафанатка
-                charectirt1 = 7;
-                charectirtO1 = 1;
-
-                charectirt2 = 4;
-                charectirtO2 = 5;
-
-                charectirt3 = 0;
-                charectirtO3 = 17;
-                break;
-            case 11: // Нарко 2
-                charectirt1 = 1;
+            case 11: //старик-наркоман
+                charectirt1 = 0;
                 charectirtO1 = 2;
 
                 charectirt2 = 0;
-                charectirtO2 = 1;
+                charectirtO2 = 2;
 
-                charectirt3 = 2;
-                charectirtO3 = 22;
+                charectirt3 = 0;
+                charectirtO3 = 2;
                 break;
         }
         stat = 0;
     }
 
-    void RandomizerChar1()
+    void RandomizerCharRecept()
     {
         int firstchar;
-        firstchar = Random.Range(0, 5);
-        charectirt1 = firstchar;
-        if (firstchar == 0 || firstchar == 2 || firstchar == 4)
-        {
-            charectirtO1 = 1;
-        }
-        if (firstchar == 1 || firstchar == 3)
-        {
-            charectirtO1 = 2;
-        }
-    }
-
-    void RandomizerChar2()
-    {
-        int firstchar;
-        firstchar = Random.Range(0, 5);
-        charectirt2 = firstchar;
-        if (firstchar == 0) charectirtO2 = 1; // "LCD-TV"
-        if (firstchar == 1) charectirtO2 = 2; // "PlanB"
-        if (firstchar == 2) charectirtO2 = 3; // "Kokos"
-
-        if (firstchar == 3) charectirtO2 = 4; // Камера
-        if (firstchar == 4) charectirtO2 = 5;
-    }
-
-    void RandomizerChar3()
-    {
-        int firstchar;
-        firstchar = Random.Range(15, 29);
-        charectirtO3 = firstchar;
         firstchar = Random.Range(0, 3);
-        charectirt3 = firstchar;
+        charectirt1 = firstchar;
+        if (firstchar == 1)
+        {
+            charectirtO1 = 1; //можно
+        }
+        else
+        {
+            if (firstchar == 2) charectirtO1 = 3; //нельзя но с фейк рецептом
+            else charectirtO1 = 2; //нельзя
+        }
     }
 
+    void RandomizerCharPartia()
+    {
+        int firstchar;
+        firstchar = Random.Range(0, 3);
+        charectirt2 = firstchar;
+        if (firstchar != 0)
+        {
+            charectirtO2 = 1; //можно
+        }
+        else
+        {
+            charectirtO2 = 2; //нельзя
+        }
+    }
+
+    void RandomizerCharDozirovka()
+    {
+        int firstchar;
+        firstchar = Random.Range(0, 4);
+        charectirt3 = firstchar;
+        if (firstchar != 0 && firstchar == whatdozetoday)
+        {
+            charectirtO3 = 1; //можно
+        }
+        else
+        {
+            charectirtO3 = 2; //нельзя
+        }
+    }
+
+    string Randompreparat()
+    {
+        string preparat;
+        int ramdompls;
+        //Debug.Log(Timer.provDen);
+        switch (Timer.provDen)
+        {
+            case 1:
+                ramdompls = UnityEngine.Random.Range(0, 5);
+                Typepreparata = Timer.zadanie[2, ramdompls];
+                preparat = Timer.preparati[2, ramdompls];
+                break;
+            case 2:
+                ramdompls = UnityEngine.Random.Range(0, 5);
+                int ra = UnityEngine.Random.Range(1, 3);
+                Typepreparata = Timer.zadanie[ra, ramdompls];
+                preparat = Timer.preparati[ra, ramdompls];
+                break;
+            default:
+                string[] strArr = { "Drenard", "Huflobert", "Tsark", "Ziekvayn", "Achark", "Oslorc", "Chrisbert", "Oitriobey", "Vrumerton", "Zhabas", "Glaifraka", "Megand", "Utrouver", "Meleu", "Mivine" };
+                ramdompls = UnityEngine.Random.Range(0, 15);
+                Typepreparata = ramdompls;
+                preparat = strArr[ramdompls];
+                break;
+        }
+        //string[] strArr = { "Drenard", "Huflobert", "Tsark", "Ziekvayn", "Achark", "Oslorc", "Chrisbert", "Oitriobey", "Vrumerton", "Zhabas", "Glaifraka", "Megand", "Utrouver", "Meleu", "Mivine" };
+        //int ramdompls = UnityEngine.Random.Range(0, 15);
+        //Typepreparata = ramdompls;
+        //preparat = strArr[ramdompls];
+        return preparat;
+    }
 }

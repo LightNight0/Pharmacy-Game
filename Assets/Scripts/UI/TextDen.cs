@@ -21,11 +21,11 @@ public class TextDen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OtlDen.text = "Отложить Все На Лекарство: " + (DontDestroy.Lek + Timer.Lekabuff) + "/1500$"; 
+        OtlDen.text = "Order medicine: 3$ for 1 medicines"; 
         PerHP.text = Timer.zavotdeneg1 + "%";
         PerZV.text = Timer.zavotdeneg2 + "%";
-        Rashodi.text = "Ежедневные Расходы: " + (Timer.zavotdeneg + 10) + "$";
-        if (DontDestroy.Mon >= 0) OstatoDeneg.text = "Оставшиеся Деньги: " + DontDestroy.Mon + "$";
-        else OstatoDeneg.text = "Вы в долгах: " + (DontDestroy.Mon * -1) + "$";
+        Rashodi.text = "Daily Expenses: " + (Timer.zavotdeneg + 10) + "$";
+        if (DontDestroy.Mon >= 0) OstatoDeneg.text = "Remaining money: " + DontDestroy.Mon + "$";
+        else OstatoDeneg.text = "You are in debt: " + (DontDestroy.Mon * -1) + "$";
     }
 }

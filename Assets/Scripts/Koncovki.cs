@@ -9,8 +9,6 @@ public class Koncovki : MonoBehaviour
 
     public Animator YourPath;
     public Text YourText;
-    public Animator ReportPath;
-    public Text ReportText;
     public Animator FanPath;
     public Text FanText;
     public Animator BusWPath;
@@ -20,6 +18,7 @@ public class Koncovki : MonoBehaviour
     public GameObject Svet;
     public GameObject PregP;
     public Sprite[] spritesi = new Sprite[2];
+    public Animator Nark2Path;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,65 +34,51 @@ public class Koncovki : MonoBehaviour
         
     }
 
-    void YourSelf() //концовка ГГ завязанная на деньгах
+    void YourSelf() //концовка ГГ 
     {
-        if ((DontDestroy.Mon + DontDestroy.Lek) <= 0)
-        {
-            YourText.text = "Вы не смогли накопить денег на лечение, а также умудрились войти в долги, с такой жизнью вы долго не протянете...\nМесяц или два...";
-        }
-        if ((DontDestroy.Mon + DontDestroy.Lek) < 500 && (DontDestroy.Mon + DontDestroy.Lek) > 0) 
-        {
-            YourText.text = "Жаль, что по итогу этого путешествия денег оказалось так мало.\nНа эти деньги вы сможете посетить, перед смертью, то место, о котором всегда мечтали.";
-        }
-        if ((DontDestroy.Mon + DontDestroy.Lek) < 750 && (DontDestroy.Mon + DontDestroy.Lek) >= 500)
-        {
-            YourText.text = "Увы, если бы вы были более осторожным или предприимчевым, то смогли бы собрать нужную сумму.\nВаших денег не хватит на лечение, но вы сможете хорошо повеселится до прихода вашего конца, тем более, до него еще пару лет.";
-        }
-        if ((DontDestroy.Mon + DontDestroy.Lek) < 1000 && (DontDestroy.Mon + DontDestroy.Lek) >= 750)
-        {
-            YourText.text = "Вы были близко, но не смогли накопить на полную терапию, вы можете позволить себе лишь пару терапий, но не полный курс, впрочем, этого все равно хватит чтобы продлить жизнь на десятилетие.";
-        }
-        if ((DontDestroy.Mon + DontDestroy.Lek) < 1500 && (DontDestroy.Mon + DontDestroy.Lek) >= 1000)
-        {
-            YourText.text = "Сумму, которую вы собрали, хватит только на терапию, но без реабилитации.\nВам будет трудно справлятся первое время после терапии, но у вас все еще есть друзья, готовые вас поддержать и помочь вам.";
-        }
-        if ((DontDestroy.Mon + DontDestroy.Lek) >= 1500)
-        {
-            YourText.text = "Накопив нужную сумму, вы смогли полностью излечится от зависимости.\nТеперь вы снова можете спокойно кататься по миру и веселится.";
-        }
+        YourText.text = "You worked well and earned a vacation, but what will happen next?";
+        if (DontDestroy.busw) YourText.text += "\nDue to your incompetence, the pharmacy management ceased to trust you and you were fired.";
+        else YourText.text += "\nSince you passed the \"examination\", you grew up in the eyes of pharmacy management, they even raised your salary and issued benefits.";
+        if (DontDestroy.nark) YourText.text += "\nAfter your help to some drug addict, luck began to chase you. Karma?";
+        else YourText.text += "\nYou refused to help a sincere person, you began to acquire more unhappy moments in your life. Karma?";
+        YourText.text += "\nHave a good day!";
 
         StartCoroutine(YourWait());
     }
 
-    void Reportersha()//концовка с группой и репортешей
-    {
-        if (DontDestroy.report2 == true) StartCoroutine(ReportWait());
-        else UberFan();
+    void Nark()
+    { 
+        UberFan();
     }
 
-    void UberFan()//концовка про бассиста и убер мегафанатку
+    void UberFan()//
     {
-        if (DontDestroy.uberfan == true) StartCoroutine(FanWait());
-        else BusW();
+        if (DontDestroy.uberfan) StartCoroutine(FanWait());
+        else Psycho();
     }
 
-    void BusW()//концовка про менеджера с предложением
+    void Psycho()//
     {
-        if (DontDestroy.busw == true) StartCoroutine(BuswWait());
+        StartCoroutine(BuswWait());
+    }
+
+    void Nark2()
+    {
+        if (DontDestroy.mannark) StartCoroutine(Nark2Wait());
         else Preg();
     }
 
-    void Preg()//концовка про малого от вокалиста
+    void Preg()//
     {
-        if (DontDestroy.pregant == true)
+        if (DontDestroy.pregant)
         {
             PregP.GetComponent<Image>().sprite = spritesi[0];
-            PregText.text = "Грустная история приключилась с девушкой, некогда бывшей фанаткой, которая носила под своим сердцем ребенка от любимого всеми певца.\nПосле пропажи её еще долго искали друзья и близкие, но тело так и не нашли...";
+            PregText.text = "A sad story happened with a girl who was deceived by her husband.\nAfter her disappearance, she was searched for a long time, but her body was never found.\nIt’s your fault too.";
         }
         else
         {
             PregP.GetComponent<Image>().sprite = spritesi[1];
-            PregText.text = "Но самое главное это то, что маленький мальчик из Детройта, с кудрявыми волосами и слегка глупой улыбкой, так и никогда не узнает кто его настоящий отец.";
+            PregText.text = "When you refused the girl, in her request to help her with suicide, he thought about it and decided to start life from scratch, you have done well ...\nBut will she be happy this time?";
         }
         StartCoroutine(PregWait());
     }
@@ -110,22 +95,22 @@ public class Koncovki : MonoBehaviour
         YourPath.SetBool("isDa", !izHidden);
 
         yield return new WaitForSeconds(1.0f);
-        Reportersha();
+        Nark();
     }
 
-    IEnumerator ReportWait()
+    IEnumerator Nark2Wait()
     {
-        ReportPath.enabled = true;
-        bool ijHidden = ReportPath.GetBool("isHidden");
-        ReportPath.SetBool("isHidden", !ijHidden);
+        Nark2Path.enabled = true; // 
+        bool ijHidden = Nark2Path.GetBool("isHidden");
+        Nark2Path.SetBool("isHidden", !ijHidden); //
 
         yield return new WaitForSeconds(10.0f);
 
-        bool izHidden = ReportPath.GetBool("isDa");
-        ReportPath.SetBool("isDa", !izHidden);
+        bool izHidden = Nark2Path.GetBool("isDa"); //
+        Nark2Path.SetBool("isDa", !izHidden); //
 
         yield return new WaitForSeconds(1.0f);
-        UberFan();
+        Preg();
     }
 
     IEnumerator FanWait()
@@ -140,7 +125,7 @@ public class Koncovki : MonoBehaviour
         FanPath.SetBool("isDa", !izHidden);
 
         yield return new WaitForSeconds(1.0f);
-        BusW();
+        Psycho();
     }
 
     IEnumerator BuswWait()
@@ -155,7 +140,7 @@ public class Koncovki : MonoBehaviour
         BusWPath.SetBool("isDa", !izHidden);
 
         yield return new WaitForSeconds(1.0f);
-        Preg();
+        Nark2();
     }
 
     IEnumerator PregWait()
@@ -170,8 +155,7 @@ public class Koncovki : MonoBehaviour
         PregPath.SetBool("isDa", !izHidden);
 
         yield return new WaitForSeconds(1.5f);
-        gameObject.GetComponent<Sound>().TitriSong();
-        SceneManager.LoadScene("Titri");
+        SceneManager.LoadScene("Menu");
     }
 
     IEnumerator SvetWait()

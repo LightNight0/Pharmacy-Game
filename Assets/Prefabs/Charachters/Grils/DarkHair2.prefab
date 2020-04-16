@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a41b77558786c5f45b1e0240d222d94d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aac65fcc48ad79443aa853b45e65abca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogPanel: {fileID: 0}
+  zavz: {fileID: 0}
   TimePanel1: {fileID: 0}
   PanelPlay1: {fileID: 0}
   Oshibka: {fileID: 0}

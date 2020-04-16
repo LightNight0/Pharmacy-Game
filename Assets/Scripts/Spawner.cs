@@ -24,7 +24,7 @@ public class Spawner : MonoBehaviour
     public void Clons()
     {
         int modwho;
-        modwho = UnityEngine.Random.Range(-6, 8);
+        modwho = UnityEngine.Random.Range(0, 8);//-6
         string lname = SceneManager.GetActiveScene().name;
         if (ocheredforsujet == 1 && lname == "Story_Mode")
         {
@@ -129,7 +129,7 @@ public class Spawner : MonoBehaviour
 
     void SpawnSAP3()
     {
-        whatToSpawnClone[2] = Instantiate(whatToSpawnPrefab[2], spawnLacations[1].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+        whatToSpawnClone[2] = Instantiate(whatToSpawnPrefab[2], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
     }
 
     void SpawnSAP4()
@@ -144,7 +144,7 @@ public class Spawner : MonoBehaviour
 
     void SpawnSAP6()
     {
-        whatToSpawnClone[5] = Instantiate(whatToSpawnPrefab[5], spawnLacations[2].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+        whatToSpawnClone[5] = Instantiate(whatToSpawnPrefab[5], spawnLacations[0].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
     }
 
     void SpawnSAP7()

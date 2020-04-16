@@ -9,8 +9,6 @@ public class Sound : MonoBehaviour
     public AudioClip[] treks = new AudioClip[5];
     GameObject ToChtoIgraet;
     GameObject Blya;
-    int zapomnil = 0;
-    int zapomnil2 = 100;
 
     public float volume = 0.25f;
     public AudioMixer audiomixer;
@@ -22,8 +20,8 @@ public class Sound : MonoBehaviour
         if (lname == "Endless_Mode" || lname == "Story_Mode") 
         {
             ToChtoIgraet = GameObject.Find("DontDestroy(Clone)");
-            ToChtoIgraet.GetComponent<AudioSource>().enabled = false;
-            SoundOff();
+            //ToChtoIgraet.GetComponent<AudioSource>().enabled = false;
+            //SoundOff();
         }
     }
 
@@ -99,7 +97,7 @@ public class Sound : MonoBehaviour
 
             Blya = GameObject.Find("MuzForPause");
             Blya.GetComponent<AudioSource>().enabled = false;
-            ToChtoIgraet.GetComponent<AudioSource>().enabled = true;
+            //ToChtoIgraet.GetComponent<AudioSource>().enabled = true;
             volume = 0.25f;
             ToChtoIgraet = GameObject.Find("DontDestroy(Clone)");
             ToChtoIgraet.GetComponent<AudioSource>().volume = 0.25f;

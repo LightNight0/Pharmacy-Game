@@ -17,9 +17,10 @@ public class DontDestroy : MonoBehaviour
     public static int zapaud1 = 0;
     public static int zapaud2 = 100;
 
-    public static bool report1 = false;
-    public static bool report2 = false;
-    public static bool trans = false;
+    //public static bool report1 = false;
+    //public static bool report2 = false;
+    public static bool mannark = false;
+    public static bool psycho = false;
     public static bool nark = false;
     public static bool uberfan = false;
     public static bool pregant = false;
@@ -34,6 +35,8 @@ public class DontDestroy : MonoBehaviour
     public static double[] LekAct = { 0, 0 };
     public static float HpAct = 55;
     public static float ZvAct = 25;
+
+    public static bool scenepodgryz = true;
 
     // Start is called before the first frame update
     void Start()

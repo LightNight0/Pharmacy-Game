@@ -13,6 +13,13 @@ public class Dialog : MonoBehaviour
     int zapomnil2 = 100;
 
     GameObject pers;
+    public GameObject Receptik;
+    public Sprite[] Recepti = new Sprite[2];
+    public Text ReceptText;
+    public Animator ReceptPanel;
+    public bool RecptPanelVkl = true;
+    public bool AnadoVkl = false;
+    bool docktor = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +33,6 @@ public class Dialog : MonoBehaviour
         if (Move.aga == 1 && drop == 0)
         {
             Frazi();
-            //
             pers = GameObject.FindWithTag("Model");
             if (pers.name == "Ber(Clone)")
             {
@@ -35,7 +41,7 @@ public class Dialog : MonoBehaviour
                 color.g = 0.0f;
                 color.b = 1.0f;
                 DialogB.color = color;
-                DialogB.text = "Пропусти меня, мне нужно встретится с отцом моего ребенка, он вокалист в группе!";
+                DialogB.text = "I wanna die! I wanna die! I wanna die! Please kill me!!! Or give me a pack of drugs, then i can get an overdose. If you help me, I give you 300 bucks.";
             }
             if (pers.name == "BW(Clone)")
             {
@@ -44,7 +50,7 @@ public class Dialog : MonoBehaviour
                 color.g = 0.0f;
                 color.b = 1.0f;
                 DialogB.color = color;
-                DialogB.text = "Я представитель компании \"SexyMyzTorg\", у меня есть деловое предложение к группе, пропусти.";
+                DialogB.text = "Hello there! Please give me " + ModelsBio.TypeM + ", i will give you for that 200 bucks.";
             }
             if (pers.name == "Nark(Clone)")
             {
@@ -53,18 +59,8 @@ public class Dialog : MonoBehaviour
                 color.g = 0.0f;
                 color.b = 1.0f;
                 DialogB.color = color;
-                DialogB.text = "Привет, слушай, можешь занять мне 250$?\n Я обязательно верну как-нибудь!";
-                if (DontDestroy.nark == true) DialogB.text = "Привет, ты меня сильно выручил, вот и я в долгу не остнусь.\nВижу тебе не очень хорошо, держи, это поможет.";
-            }
-            if (pers.name == "Rep(Clone)")
-            {
-                var color = DialogB.color;
-                color.r = 0.7f;
-                color.g = 0.0f;
-                color.b = 1.0f;
-                DialogB.color = color;
-                DialogB.text = "А, привет, пропусти пожалуйста, я дам тебе 500$.";
-                if (DontDestroy.report1 == false && Timer.provDen == 11) DialogB.text = "Снова привет, пропусти пожалуйста, я дам тебе 750$.";
+                DialogB.text = "Hi, I’m conducting an experiment: I grow special plants on preparations - for one of the last experiments I need " + ModelsBio.TypeM + ", do you help me? You can get 20 bucks.";
+                //if (DontDestroy.nark == true) DialogB.text = "Привет, ты меня сильно выручил, вот и я в долгу не остнусь.\nВижу тебе не очень хорошо, держи, это поможет.";
             }
             if (pers.name == "TransB(Clone)")
             {
@@ -73,7 +69,7 @@ public class Dialog : MonoBehaviour
                 color.g = 0.0f;
                 color.b = 1.0f;
                 DialogB.color = color;
-                DialogB.text = "Даров, пропусти к ним, будь так добр, или тебе не поздоровится.";
+                DialogB.text = "I had a hard month, can you give me " + ModelsBio.TypeM + " for relax? Or I'll break all your bones ...";
             }
             if (pers.name == "TryFan(Clone)")
             {
@@ -82,7 +78,8 @@ public class Dialog : MonoBehaviour
                 color.g = 0.0f;
                 color.b = 1.0f;
                 DialogB.color = color;
-                DialogB.text = "Я самая преданная фанатка, пропусти пожалуйста, я точно им понравлюсь. Я очень сильно хочу их увидеть!";
+                DialogB.text = "Hello colleague, I decided to start a small business at work, for him I need a recipe with a seal, I know you have a suitable one, exchanging it for me for 150 bucks.";
+                UFan();
             }
             if (pers.name == "Nark2(Clone)")
             {
@@ -91,7 +88,7 @@ public class Dialog : MonoBehaviour
                 color.g = 0.0f;
                 color.b = 1.0f;
                 DialogB.color = color;
-                DialogB.text = "Слушай, ты какой-то слишком напряженный, прими это - расслабься.\nНу как, теперь пропустишь меня?";
+                DialogB.text = "Hey, good man, I need to get a little buzz, will you help? I just need a dose: " + ModelsBio.TypeM + " - for this you will get a plus in karma."; //for that I can give you as much as $ 20
             }
             drop = 1;
         }
@@ -102,19 +99,13 @@ public class Dialog : MonoBehaviour
             color.g = 0.0f;
             color.b = 0.0f;
             DialogB.color = color;
-            DialogB.text = "Спасибо";
+            DialogB.text = "Thanks";
             drop = 0;
-            if (otv == 2 && pers.name != "Nark(Clone)" && pers.name != "Rep(Clone)")
+            if (otv == 2 && pers.name != "Nark(Clone)" && pers.name != "BW(Clone)" && pers.name != "Nark2(Clone)" && pers.name != "TryFan(Clone)" && pers.name != "TransB(Clone)" && pers.name != "Ber(Clone)")
             {
-                DontDestroy.Mon += 25;
+                DontDestroy.Mon += gameObject.GetComponent<Timer>().vziatka;
                 DengiVKonce.skokDa += 1;
                 otv = 0;
-            }
-            if (pers.name == "Rep(Clone)")
-            {
-                if (DontDestroy.report1 == false && Timer.provDen == 11) DontDestroy.Mon += 750;
-                else DontDestroy.Mon += 500;
-                pers.name = "Pshel";
             }
         }
         if (Move.aga == 3)
@@ -124,31 +115,31 @@ public class Dialog : MonoBehaviour
             color.b = 0.0f;
             color.g = 0.0f;
             DialogB.color = color;
-            DialogB.text = "Да пошёл ты!";
+            DialogB.text = "F@*k you!";
             drop = 0;
         }
-        if (Move.aga == 104)
-        {
-            var color = DialogB.color;
-            color.r = 0.7f;
-            color.g = 0.0f;
-            color.b = 1.0f;
-            DialogB.color = color;
-            DialogB.text = "Привет, ты меня сильно выручил, вот и я в долгу не остнусь.\nВижу тебе не очень хорошо, держи, это поможет.";
-        }
+        //if (Move.aga == 104)
+        //{
+        //    var color = DialogB.color;
+        //    color.r = 0.7f;
+        //    color.g = 0.0f;
+        //    color.b = 1.0f;
+        //    DialogB.color = color;
+        //    DialogB.text = "Привет, ты меня сильно выручил, вот и я в долгу не остнусь.\nВижу тебе не очень хорошо, держи, это поможет.";
+        //}
     }
 
     void Frazi()
     {
         int otvet = 0;
-        string[] strArr = new string[5] { "Пусти плиз.", "Я очень сильно хочу туда попасть.", "Я дам тебе 25$, если пропустишь.", "Пропусти меня, они знают кто я такая.", "Я самая преданная фанатка, пропусти меня к ним." };
+        string[] strArr = new string[4] { "Hi, i need a drug: ", "Give me ", "I will give you $ 10 if you give me ", "This is a pharmacy here? I need " };
         otvet = Random.Range(0, 4);
         if (otvet != zapomnil && otvet != zapomnil2)
         {
             zapomnil2 = zapomnil;
             zapomnil = otvet;
 
-            DialogB.text = strArr[otvet];
+            DialogB.text = strArr[otvet] + ModelsBio.TypeM;
             otv = otvet;
 
             if (otvet == 2)
@@ -173,12 +164,81 @@ public class Dialog : MonoBehaviour
 
     public void UFan()
     {
-        var color = DialogB.color;
-        color.r = 0.0f;
-        color.g = 0.0f;
-        color.b = 0.0f;
-        DialogB.color = color;
-        DialogB.text = ModelsBio.fan[ModelsBio.charectirt1];
+        if (pers.name == "TryFan(Clone)" || pers.name == "Ber(Clone)")
+        {
+            if (pers.name == "TryFan(Clone)")
+            {
+                if (docktor)
+                {
+                    var color = DialogB.color;
+                    color.r = 0.0f;
+                    color.g = 0.0f;
+                    color.b = 0.0f;
+                    DialogB.color = color;
+                    DialogB.text = "Yes, I need a prescription, and you need money";
+                }
+                Receptik.GetComponent<Image>().sprite = Recepti[0];
+                ReceptText.text = "Prescription for the purchase of the drug: ";
+                ReceptPanenelViehat();
+                docktor = true;
+            }
+            else
+            {
+                var color = DialogB.color;
+                color.r = 0.0f;
+                color.g = 0.0f;
+                color.b = 0.75f;
+                DialogB.color = color;
+                DialogB.text = "Do I need f@*king paper to kill myself?! My husband lie to me almost 10 years, I wanna finish with myself!";
+            }
+        }
+        else
+        {
+            var color = DialogB.color;
+            color.r = 0.0f;
+            color.g = 0.0f;
+            color.b = 0.0f;
+            DialogB.color = color;
+            for (int i = 0; i < 5; i++)
+            {
+                if (ModelsBio.Typepreparata == Timer.zadanie[0, i])
+                {
+                    DialogB.text = ModelsBio.recept[ModelsBio.charectirt1];
+                    if (ModelsBio.charectirtO1 == 1)
+                    {
+                        Receptik.GetComponent<Image>().sprite = Recepti[0];
+                        ReceptText.text = "Prescription for the purchase of the drug: " + ModelsBio.TypeM;
+                        //RecptPanelVkl = true;
+                        ReceptPanenelViehat();
+                    }
+                    if (ModelsBio.charectirtO1 == 3)
+                    {
+                        Receptik.GetComponent<Image>().sprite = Recepti[1];
+                        ReceptText.text = "Prescription for the purchase of the drug: " + ModelsBio.TypeM;
+                        //RecptPanelVkl = true;
+                        //AnadoVkl = true;
+                        ReceptPanenelViehat();
+                    }
+                    break;
+                }
+                else
+                {
+                    DialogB.text = "To buy this, you do not need it";
+                }
+            }
+        }
+    }
+
+    public void ReceptPanenelViehat()
+    {
+        if (RecptPanelVkl)
+        {
+            RecptPanelVkl = false;
+            ReceptPanel.enabled = true;
+            AnadoVkl = true;
+            bool ijHidden = ReceptPanel.GetBool("isHidden");
+            ReceptPanel.SetBool("isHidden", !ijHidden);
+        }
     }
 
     public void Dosmotrr()
@@ -188,7 +248,7 @@ public class Dialog : MonoBehaviour
         color.g = 0.0f;
         color.b = 0.0f;
         DialogB.color = color;
-        DialogB.text = "<Вы Нашли: " + ModelsBio.ves[ModelsBio.charectirtO2 - 1] + ">";
+        DialogB.text = ModelsBio.dozirovka[ModelsBio.charectirt3];
     }
 
     public void HowOld()
@@ -198,7 +258,17 @@ public class Dialog : MonoBehaviour
         color.g = 0.0f;
         color.b = 0.0f;
         DialogB.color = color;
-        DialogB.text = ModelsBio.old[ModelsBio.charectirt3] + ModelsBio.charectirtO3;
+        DialogB.text = ModelsBio.partbilet[ModelsBio.charectirt2];
+    }
+
+    public void PovtoriPreparat()
+    {
+        var color = DialogB.color;
+        color.r = 0.0f;
+        color.g = 0.0f;
+        color.b = 0.0f;
+        DialogB.color = color;
+        DialogB.text = "I need " + ModelsBio.TypeM;
     }
 
 }

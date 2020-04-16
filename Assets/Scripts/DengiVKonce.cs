@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,8 @@ public class DengiVKonce : MonoBehaviour
     Text Deffki;
     Text Money;
     Text AllMoney;
+    public Slider zavaz;
+    Move Movik = new Move();
 
     // Start is called before the first frame update
     void Start()
@@ -22,18 +25,25 @@ public class DengiVKonce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.tag == "SD") Deffki.text = " " + skok;
+        if (gameObject.tag == "SD") //Deffki.text = " " + skok;
+        {
+            //Deffki.text = DontDestroy.Mon + "$";
+            if (Move.skokrazoshibsa2 == 0) Deffki.text = ((skok * (Math.Floor(zavaz.value / Movik.pribavka) + Movik.nadbavka)) + (skokDa * GameObject.Find("Controller").gameObject.GetComponent<Timer>().vziatka)) + "$";
+            if (Move.skokrazoshibsa2 == 1) Deffki.text = ((skok * (Math.Floor(zavaz.value / Movik.pribavka) + Movik.nadbavka)) + (skokDa * GameObject.Find("Controller").gameObject.GetComponent<Timer>().vziatka) - 5) + "$";
+            if (Move.skokrazoshibsa2 == 2) Deffki.text = ((skok * (Math.Floor(zavaz.value / Movik.pribavka) + Movik.nadbavka)) + (skokDa * GameObject.Find("Controller").gameObject.GetComponent<Timer>().vziatka) - 15) + "$";
+            if (Move.skokrazoshibsa2 == 3) Deffki.text = ((skok * (Math.Floor(zavaz.value / Movik.pribavka) + Movik.nadbavka)) + (skokDa * GameObject.Find("Controller").gameObject.GetComponent<Timer>().vziatka) - 30) + "$";
+        }
         if (gameObject.tag == "SM")
         {
-            if (Move.skokrazoshibsa2 == 0) Money.text = "Кол-во Денег За День: " + ((skok * 12) + (skokDa * 25)) + "$";
-            if (Move.skokrazoshibsa2 == 1) Money.text = "Кол-во Денег За День: " + ((skok * 12) + (skokDa * 25) - 5) + "$";
-            if (Move.skokrazoshibsa2 == 2) Money.text = "Кол-во Денег За День: " + ((skok * 12) + (skokDa * 25) - 15) + "$";
-            if (Move.skokrazoshibsa2 == 3) Money.text = "Кол-во Денег За День: " + ((skok * 12) + (skokDa * 25) - 30) + "$";
+            if (Move.skokrazoshibsa2 == 0) Money.text = "Кол-во Денег За День: " + ((skok * (Math.Floor(zavaz.value / Movik.pribavka) + Movik.nadbavka)) + (skokDa * GameObject.Find("Controller").gameObject.GetComponent<Timer>().vziatka)) + "$";
+            if (Move.skokrazoshibsa2 == 1) Money.text = "Кол-во Денег За День: " + ((skok * (Math.Floor(zavaz.value / Movik.pribavka) + Movik.nadbavka)) + (skokDa * GameObject.Find("Controller").gameObject.GetComponent<Timer>().vziatka) - 5) + "$";
+            if (Move.skokrazoshibsa2 == 2) Money.text = "Кол-во Денег За День: " + ((skok * (Math.Floor(zavaz.value / Movik.pribavka) + Movik.nadbavka)) + (skokDa * GameObject.Find("Controller").gameObject.GetComponent<Timer>().vziatka) - 15) + "$";
+            if (Move.skokrazoshibsa2 == 3) Money.text = "Кол-во Денег За День: " + ((skok * (Math.Floor(zavaz.value / Movik.pribavka) + Movik.nadbavka)) + (skokDa * GameObject.Find("Controller").gameObject.GetComponent<Timer>().vziatka) - 30) + "$";
         }
         if (gameObject.tag == "SAM")
         {
-            if (DontDestroy.Mon >= 0) AllMoney.text = "Кол-во Всех Денег: " + DontDestroy.Mon + "$";
-            else AllMoney.text = "Долг: " + (DontDestroy.Mon * -1) + "$";
+            if (DontDestroy.Mon >= 0) AllMoney.text = "All money: " + DontDestroy.Mon + "$";
+            else AllMoney.text = "Debt: " + (DontDestroy.Mon * -1) + "$";
         }
     }
 }

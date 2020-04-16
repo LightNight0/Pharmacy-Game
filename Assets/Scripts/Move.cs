@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,7 +8,6 @@ using UnityEngine.UI;
 public class Move : MonoBehaviour
 {
 
-    //public Animator contentPanel;
     public Animator DialogPanel;
 
     public static int aga = 0;
@@ -15,6 +15,8 @@ public class Move : MonoBehaviour
     GameObject model;
     GameObject spa;
     GameObject contrl;
+
+    public Slider zavz;
 
     public Animator TimePanel1;
     public Animator PanelPlay1;
@@ -24,14 +26,6 @@ public class Move : MonoBehaviour
 
     public Animator YD;
     public Text YDText;
-
-    public static int zadanie1 = 0;
-    public static int zadanie2 = 0;
-    public static int zadanie3 = 0;
-
-    public static int podhodit1 = 0;
-    public static int podhodit2 = 0;
-    public static int podhodit3 = 0;
 
     public static int skokrazoshibsa = 0;
     public static int skokrazoshibsa2 = 0;
@@ -50,7 +44,7 @@ public class Move : MonoBehaviour
         if (ag1 == 1)
         {
             model.transform.position = model.transform.position + new Vector3(0.15f, 0);
-            if (model.transform.position.x > 0)
+            if (model.transform.position.x > -4.5f)
             {
                 ag1 = 0;
                 aga = 1;
@@ -91,251 +85,235 @@ public class Move : MonoBehaviour
         }
     }
 
+    public int nadbavka = 1;
+    public int pribavka = 25;
+    public int ybivaniprodykcii = 1;
+
     public void Yeas_Bitch()
     {
         if (aga == 1)
         {
-            //    contentPanel.enabled = true;
-            //    bool GoF = contentPanel.GetBool("GoF");
-            //    contentPanel.SetBool("GoF", !GoF);
-            //    StartCoroutine(SIS());
-            //}
-            //model = GameObject.FindWithTag("Model");
             Vector2 pos = model.transform.position;
             ag1 = 2;
             aga = 2;
             StartCoroutine(SIS());
 
             pers = GameObject.FindWithTag("Model");
-            if (pers.name == "Rep(Clone)")
+            if (pers.name == "Nark2(Clone)")
             {
-                if (Timer.provDen == 8) DontDestroy.report1 = true;
-                if (DontDestroy.report1 == true) DontDestroy.report2 = true;
-                if (DontDestroy.report1 == false && Timer.provDen == 11) DontDestroy.report2 = true;
-            }
-            if (pers.name == "Nark(Clone)" && DontDestroy.nark == false)
-            {
-                DialogPanel.enabled = true;
-                bool isHidden = DialogPanel.GetBool("isHidden");
-                DialogPanel.SetBool("isHidden", !isHidden);
-
-                DontDestroy.nark = true;
-                DontDestroy.Mon -= 250;
-                //if (DontDestroy.Mon < 0) DontDestroy.Mon = 0;
-                aga = 1;
-                No_Bitch();
+                DontDestroy.mannark = true;
+                for (int i = 0; i < 5; i++)
+                {
+                    if (ModelsBio.Typepreparata == Timer.zadanie[0, i])
+                    {
+                        if (ModelsBio.charectirtO1 == 1)
+                        {
+                            Story.skokpropdev[Timer.provDen - 1] += 1;
+                            DengiVKonce.skok += 1;
+                            DontDestroy.Mon += Math.Floor(zavz.value / pribavka) + nadbavka;
+                            Timer.zapasi -= ybivaniprodykcii;
+                        }
+                        else
+                        {
+                            Timer.zapasi -= ybivaniprodykcii;
+                            skokrazoshibsa += 1;
+                            skokrazoshibsa2 += 1;
+                            if (ModelsBio.charectirtO1 == 3)
+                            {
+                                if (skokrazoshibsa < 3) OshibkaText.text = "You made a mistake, prescription is fake! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$";
+                                if (skokrazoshibsa == 3) OshibkaText.text = "You made a mistake, prescription is fake! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$, last warning!";
+                            }
+                            else
+                            {
+                                if (skokrazoshibsa < 3) OshibkaText.text = "You made a mistake, there was no prescription! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$";
+                                if (skokrazoshibsa == 3) OshibkaText.text = "You made a mistake, there was no prescription! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$, last warning!";
+                            }
+                            if (skokrazoshibsa == 4) OshibkaText.text = "You made your last mistake, you're fired!";
+                            DontDestroy.Mon -= skokrazoshibsa * 5;
+                            Oshibsa();
+                        }
+                        break;
+                    }
+                    if (ModelsBio.Typepreparata == Timer.zadanie[1, i])
+                    {
+                        if (ModelsBio.charectirtO2 == 1)
+                        {
+                            Story.skokpropdev[Timer.provDen - 1] += 1;
+                            DengiVKonce.skok += 1;
+                            DontDestroy.Mon += Math.Floor(zavz.value / pribavka) + nadbavka;
+                            Timer.zapasi -= ybivaniprodykcii;
+                        }
+                        else
+                        {
+                            Timer.zapasi -= ybivaniprodykcii;
+                            skokrazoshibsa += 1;
+                            skokrazoshibsa2 += 1;
+                            if (skokrazoshibsa < 3) OshibkaText.text = "You made a mistake, there was no party membership! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$";
+                            if (skokrazoshibsa == 3) OshibkaText.text = "You made a mistake, there was no party membership! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$, last warning!";
+                            if (skokrazoshibsa == 4) OshibkaText.text = "You made your last mistake, you're fired!";
+                            DontDestroy.Mon -= skokrazoshibsa * 5;
+                            Oshibsa();
+                        }
+                        break;
+                    }
+                    if (ModelsBio.Typepreparata == Timer.zadanie[2, i])
+                    {
+                        if (ModelsBio.charectirtO3 == 1)
+                        {
+                            Story.skokpropdev[Timer.provDen - 1] += 1;
+                            DengiVKonce.skok += 1;
+                            DontDestroy.Mon += Math.Floor(zavz.value / pribavka) + nadbavka;
+                            Timer.zapasi -= ybivaniprodykcii;
+                        }
+                        else
+                        {
+                            Timer.zapasi -= ybivaniprodykcii;
+                            skokrazoshibsa += 1;
+                            skokrazoshibsa2 += 1;
+                            if (skokrazoshibsa < 3) OshibkaText.text = "You made a mistake, dosage not observed! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$";
+                            if (skokrazoshibsa == 3) OshibkaText.text = "You made a mistake, dosage not observed! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$, last warning!";
+                            if (skokrazoshibsa == 4) OshibkaText.text = "You made your last mistake, you're fired!";
+                            DontDestroy.Mon -= skokrazoshibsa * 5;
+                            Oshibsa();
+                        }
+                        break;
+                    }
+                }
                 return;
+            }
+            if (pers.name == "Nark(Clone)")
+            {
+                DontDestroy.Mon += 20;
+                DengiVKonce.skok += 4;
+                DontDestroy.nark = true;
+                //DialogPanel.enabled = true;
+                //bool isHidden = DialogPanel.GetBool("isHidden");
+                //DialogPanel.SetBool("isHidden", !isHidden);
+                //DontDestroy.Mon -= 250;
+                //if (DontDestroy.Mon < 0) DontDestroy.Mon = 0;
+                //aga = 1;
+                //No_Bitch();
+                //return;
             }
             if (pers.name == "TransB(Clone)")
             {
-                DontDestroy.trans = true;
-                gameObject.GetComponent<Timer>().TransKill();
+                DontDestroy.psycho = true;
             }
             if (pers.name == "Ber(Clone)")
             {
+                DontDestroy.Mon += 300;
+                DengiVKonce.skok += 60;
                 DontDestroy.pregant = true;
             }
             if (pers.name == "BW(Clone)")
             {
-                DontDestroy.Mon += 350;
+                DontDestroy.Mon += 200;
+                DengiVKonce.skok += 40;
                 DontDestroy.busw = true;
+                {
+                    //for (int i = 0; i < 5; i++)
+                    //{
+                    //    if (ModelsBio.Typepreparata == Timer.zadanie[0, i])
+                    //    {
+                    //        Timer.zapasi -= ybivaniprodykcii;
+                    //        skokrazoshibsa += 1;
+                    //        skokrazoshibsa2 += 1;
+                    //        if (skokrazoshibsa < 3) OshibkaText.text = "You made a mistake, there was no prescription! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$";
+                    //        if (skokrazoshibsa == 3) OshibkaText.text = "You made a mistake, there was no prescription! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$, last warning!";
+                    //        if (skokrazoshibsa == 4) OshibkaText.text = "You made your last mistake, you're fired!";
+                    //        DontDestroy.Mon -= skokrazoshibsa * 5;
+                    //        Oshibsa();
+                    //        break;
+                    //    }
+                    //}
+                    //return;
+                }
             }
             if (pers.name == "TryFan(Clone)")
             {
+                DontDestroy.Mon += 150;
+                DengiVKonce.skok += 30;
                 DontDestroy.uberfan = true;
             }
-            if (pers.name == "Nark(Clone)") return;
             else
-            if (ModelsBio.charectirtO2 != 6)
             {
-                if (ModelsBio.charectirtO2 != 4)
+                for (int i = 0; i < 5; i++)
                 {
-                    if (ModelsBio.charectirtO3 >= 18)
+                    if (ModelsBio.Typepreparata == Timer.zadanie[0, i]) 
                     {
-                        if (zadanie1 == podhodit1 || zadanie1 == 4)
+                        if (ModelsBio.charectirtO1 == 1) 
                         {
-                            if (zadanie2 == 0)
-                            {
-                                Story.skokpropdev[Timer.provDen - 1] += 1;
-                                DengiVKonce.skok += 1;
-                                DontDestroy.Mon += 12;
-                            }
-                            if (zadanie2 == 1) //проверка на фанатку
-                            {
-                                if (ModelsBio.charectirtO1 == 1)
-                                {
-                                    Story.skokpropdev[Timer.provDen - 1] += 1;
-                                    DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 12;
-                                }
-                                else
-                                {
-                                    skokrazoshibsa += 1;
-                                    skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, она не фанатка! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, она не фанатка! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
-                                    if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
-                                    DontDestroy.Mon -= skokrazoshibsa * 5;
-                                    Oshibsa();
-                                }
-                            }
-                            if (zadanie2 == 20) //проверка на "LCD-TV"  
-                            {
-                                if (ModelsBio.charectirtO2 == 1)
-                                {
-                                    Story.skokpropdev[Timer.provDen - 1] += 1;
-                                    DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 12;
-                                }
-                                else
-                                {
-                                    skokrazoshibsa += 1;
-                                    skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у неё нет LCD-TV! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у неё нет LCD-TV! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
-                                    if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
-                                    DontDestroy.Mon -= skokrazoshibsa * 5;
-                                    Oshibsa();
-                                }
-                            }
-                            if (zadanie2 == 21) //проверка на "PlanB"
-                            {
-                                if (ModelsBio.charectirtO2 == 2)
-                                {
-                                    Story.skokpropdev[Timer.provDen - 1] += 1;
-                                    DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 12;
-                                }
-                                else
-                                {
-                                    skokrazoshibsa += 1;
-                                    skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у неё нет PlanB! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у неё нет PlanB! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
-                                    if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
-                                    DontDestroy.Mon -= skokrazoshibsa * 5;
-                                    Oshibsa();
-                                }
-                            }
-                            if (zadanie2 == 22) //проверка на "Kokos"
-                            {
-                                if (ModelsBio.charectirtO2 == 3)
-                                {
-                                    Story.skokpropdev[Timer.provDen - 1] += 1;
-                                    DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 12;
-                                }
-                                else
-                                {
-                                    skokrazoshibsa += 1;
-                                    skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у неё нет Kokos'a! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у неё нет Kokos'a! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
-                                    if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
-                                    DontDestroy.Mon -= skokrazoshibsa * 5;
-                                    Oshibsa();
-                                }
-                            }
-                            if (zadanie2 == 23) //проверка на любое
-                            {
-                                if (ModelsBio.charectirtO2 <= 3 && ModelsBio.charectirtO2 > 0)
-                                {
-                                    Story.skokpropdev[Timer.provDen - 1] += 1;
-                                    DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 12;
-                                }
-                                else
-                                {
-                                    skokrazoshibsa += 1;
-                                    skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у неё нет веществ! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у неё нет веществ! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
-                                    if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
-                                    DontDestroy.Mon -= skokrazoshibsa * 5;
-                                    Oshibsa();
-                                }
-                            }
-                            if (zadanie2 == 31) //проверка на возраст меньше которого нужно брать
-                            {
-                                if (ModelsBio.charectirtO3 <= zadanie3)
-                                {
-                                    Story.skokpropdev[Timer.provDen - 1] += 1;
-                                    DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 12;
-                                }
-                                else
-                                {
-                                    skokrazoshibsa += 1;
-                                    skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, она старше " + zadanie3 + "! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, она старше " + zadanie3 + "! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
-                                    if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
-                                    DontDestroy.Mon -= skokrazoshibsa * 5;
-                                    Oshibsa();
-                                }
-                            }
-                            if (zadanie2 == 32) //проверка на возраст больше которого нужно брать
-                            {
-                                if (ModelsBio.charectirtO3 >= zadanie3)
-                                {
-                                    Story.skokpropdev[Timer.provDen - 1] += 1;
-                                    DengiVKonce.skok += 1;
-                                    DontDestroy.Mon += 12;
-                                }
-                                else
-                                {
-                                    skokrazoshibsa += 1;
-                                    skokrazoshibsa2 += 1;
-                                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, она младше " + zadanie3 + "! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, она младше " + zadanie3 + "! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
-                                    if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
-                                    DontDestroy.Mon -= skokrazoshibsa * 5;
-                                    Oshibsa();
-                                }
-                            }
+                            Story.skokpropdev[Timer.provDen - 1] += 1;
+                            DengiVKonce.skok += 1;
+                            DontDestroy.Mon += Math.Floor(zavz.value / pribavka) + nadbavka;
+                            Timer.zapasi -= ybivaniprodykcii;
                         }
                         else
                         {
+                            Timer.zapasi -= ybivaniprodykcii;
                             skokrazoshibsa += 1;
                             skokrazoshibsa2 += 1;
-                            if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, цвет волос не тот! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                            if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, цвет волос не тот! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
-                            if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
+                            if (ModelsBio.charectirtO1 == 3)
+                            {
+                                if (skokrazoshibsa < 3) OshibkaText.text = "You made a mistake, prescription is fake! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$";
+                                if (skokrazoshibsa == 3) OshibkaText.text = "You made a mistake, prescription is fake! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$, last warning!";
+                            }
+                            else
+                            {
+                                if (skokrazoshibsa < 3) OshibkaText.text = "You made a mistake, there was no prescription! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$";
+                                if (skokrazoshibsa == 3) OshibkaText.text = "You made a mistake, there was no prescription! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$, last warning!";
+                            }
+                            if (skokrazoshibsa == 4) OshibkaText.text = "You made your last mistake, you're fired!";
                             DontDestroy.Mon -= skokrazoshibsa * 5;
                             Oshibsa();
                         }
+                        break;
                     }
-                    else
+                    if (ModelsBio.Typepreparata == Timer.zadanie[1, i])
                     {
-                        skokrazoshibsa += 1;
-                        skokrazoshibsa2 += 1;
-                        if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, ей нет 18! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                        if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, ей нет 18! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
-                        if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
-                        DontDestroy.Mon -= skokrazoshibsa * 5;
-                        Oshibsa();
+                        if (ModelsBio.charectirtO2 == 1)
+                        {
+                            Story.skokpropdev[Timer.provDen - 1] += 1;
+                            DengiVKonce.skok += 1;
+                            DontDestroy.Mon += Math.Floor(zavz.value / pribavka) + nadbavka;
+                            Timer.zapasi -= ybivaniprodykcii;
+                        }
+                        else
+                        {
+                            Timer.zapasi -= ybivaniprodykcii;
+                            skokrazoshibsa += 1;
+                            skokrazoshibsa2 += 1;
+                            if (skokrazoshibsa < 3) OshibkaText.text = "You made a mistake, there was no party membership! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$";
+                            if (skokrazoshibsa == 3) OshibkaText.text = "You made a mistake, there was no party membership! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$, last warning!";
+                            if (skokrazoshibsa == 4) OshibkaText.text = "You made your last mistake, you're fired!";
+                            DontDestroy.Mon -= skokrazoshibsa * 5;
+                            Oshibsa();
+                        }
+                        break;
+                    }
+                    if (ModelsBio.Typepreparata == Timer.zadanie[2, i])
+                    {
+                        if (ModelsBio.charectirtO3 == 1)
+                        {
+                            Story.skokpropdev[Timer.provDen - 1] += 1;
+                            DengiVKonce.skok += 1;
+                            DontDestroy.Mon += Math.Floor(zavz.value / pribavka) + nadbavka;
+                            Timer.zapasi -= ybivaniprodykcii;
+                        }
+                        else
+                        {
+                            Timer.zapasi -= ybivaniprodykcii;
+                            skokrazoshibsa += 1;
+                            skokrazoshibsa2 += 1;
+                            if (skokrazoshibsa < 3) OshibkaText.text = "You made a mistake, dosage not observed! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$";
+                            if (skokrazoshibsa == 3) OshibkaText.text = "You made a mistake, dosage not observed! This is " + skokrazoshibsa + " mistake - fine: " + skokrazoshibsa * 5 + "$, last warning!";
+                            if (skokrazoshibsa == 4) OshibkaText.text = "You made your last mistake, you're fired!";
+                            DontDestroy.Mon -= skokrazoshibsa * 5;
+                            Oshibsa();
+                        }
+                        break;
                     }
                 }
-                else
-                {
-                    skokrazoshibsa += 1;
-                    skokrazoshibsa2 += 1;
-                    if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, она тупая папарацци! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                    if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, она тупая папарацци! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
-                    if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
-                    DontDestroy.Mon -= skokrazoshibsa * 5;
-                    Oshibsa();
-                }
-            }
-            else
-            {
-                skokrazoshibsa += 1;
-                skokrazoshibsa2 += 1;
-                if (skokrazoshibsa < 3) OshibkaText.text = "Ты налажал, у нее, ***, у него подвох! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$";
-                if (skokrazoshibsa == 3) OshibkaText.text = "Ты налажал, у нее, ***, у него подвох! Это " + skokrazoshibsa + " ошибка - штраф: " + skokrazoshibsa * 5 + "$, последнее предупреждение!";
-                if (skokrazoshibsa == 4) OshibkaText.text = "Ты налажал в последний раз, ты уволен!";
-                DontDestroy.Mon -= skokrazoshibsa * 5;
-                Oshibsa();
             }
             if (skokrazoshibsa == 4) D();
         }
@@ -348,15 +326,11 @@ public class Move : MonoBehaviour
             pers = GameObject.FindWithTag("Model");
             if (pers.name == "TransB(Clone)")
             {
-                gameObject.GetComponent<Timer>().hp.value -= 30;
-                if (gameObject.GetComponent<Timer>().hp.value < 15) gameObject.GetComponent<Timer>().hp.value = 10;
+                //gameObject.GetComponent<Timer>().hp.value -= 30;
+                //if (gameObject.GetComponent<Timer>().hp.value < 15) gameObject.GetComponent<Timer>().hp.value = 10;
+                gameObject.GetComponent<Timer>().TransKill();
+                DialogPanel.gameObject.SetActive(false);
             }
-            //    contentPanel.enabled = true;
-            //    bool GoNo = contentPanel.GetBool("GoNo");
-            //    contentPanel.SetBool("GoNo", !GoNo);
-            //    StartCoroutine(SIS());
-            //}
-            //model = GameObject.FindWithTag("Model");
             Vector2 pos = model.transform.position;
             ag1 = 3;
             aga = 3;
@@ -376,7 +350,7 @@ public class Move : MonoBehaviour
     void D()
     {
         PanePlay1();
-        YDText.text = "Вас уволили!";
+        YDText.text = "You been fired!";
         YD.enabled = true;
         bool isHidden = YD.GetBool("isHidden");
         YD.SetBool("isHidden", !isHidden);
@@ -400,7 +374,7 @@ public class Move : MonoBehaviour
         DialogPanel.enabled = true;
         bool isHidden = DialogPanel.GetBool("isHidden");
         DialogPanel.SetBool("isHidden", !isHidden);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.75f);
         Destroy(model.gameObject);
         model = GameObject.FindWithTag("Model");
         Destroy(model.gameObject);
@@ -412,12 +386,24 @@ public class Move : MonoBehaviour
 
     IEnumerator SIS()
     {
+        for (int i = 0; i < 5; i++)
+        {
+            if (ModelsBio.Typepreparata == Timer.zadanie[0, i] && ModelsBio.charectirtO1 != 2)
+            {
+                if(gameObject.GetComponent<Dialog>().AnadoVkl)
+                {
+                    gameObject.GetComponent<Dialog>().RecptPanelVkl = true;
+                    gameObject.GetComponent<Dialog>().ReceptPanenelViehat();
+                }
+                break;
+            }
+        }
         DialogPanel.enabled = true;
         bool isHidden = DialogPanel.GetBool("isHidden");
         DialogPanel.SetBool("isHidden", !isHidden);
 
         spa = GameObject.FindWithTag("Spa");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.75f);
         Destroy(model.gameObject);
         spa.GetComponent<Spawner>().Clons();
         aga = 0;
